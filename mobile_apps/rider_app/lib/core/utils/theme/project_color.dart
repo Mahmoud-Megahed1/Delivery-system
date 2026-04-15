@@ -3,8 +3,8 @@
 import 'package:ride_on/core/services/data_store.dart';
 import 'package:flutter/material.dart';
 
-Color themeColor = const Color(0xFFFFCA20);
-Color themeColor2 = const Color(0xff226EAB);
+Color themeColor = const Color(0xffEE6215);
+Color themeColor2 = const Color(0xff5F5F5F);
 Color whiteColor = const Color(0xffFFFFFF);
 Color blackColor = const Color.fromARGB(255, 6, 6, 6);
 Color ginColor = const Color(0xFFE4EFE5);
