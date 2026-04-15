@@ -1,4 +1,4 @@
-:root {
+﻿:root {
   --primary-color: #EE6215;
   /* Main theme color - Piadgo Orange */
   --primary-text-color: #fff;
@@ -1116,7 +1116,7 @@ select.input-sm {
 
 /* --- Root Variables for Theme --- */
 :root {
-  --primary-color: #FFC91F;
+  --primary-color: #EE6215;
   --dark-bg: #212529;
   --light-bg: #f8f9fa;
   --white: #ffffff;
@@ -1272,7 +1272,7 @@ select.input-sm {
 }
 
 .btn-primary.btn-block:hover {
-  background-color: #e6b30f;
+  background-color: #D15410;
   transform: translateY(-2px);
 }
 
@@ -1368,7 +1368,7 @@ select.input-sm {
 
 /* --- Root Variables for Theme --- */
 :root {
-  --primary-color: #FFC91F;
+  --primary-color: #EE6215;
   --dark-text: #212529;
   --secondary-text: #6c757d;
   --border-color: #dee2e6;
@@ -1501,7 +1501,7 @@ select.input-sm {
 }
 
 .contact .btn.btn-primary.btn-block:hover {
-  background-color: #e6b30f;
+  background-color: #D15410;
   /* Darker yellow */
   transform: translateY(-3px);
   box-shadow: 0 4px 15px rgba(255, 201, 31, 0.4);
@@ -1540,7 +1540,7 @@ select.input-sm {
 
 
 .login-page .right {
-  background: #e6b30f !important
+  background: #D15410 !important
 }
 
 .login-box br {
@@ -1626,7 +1626,7 @@ iframe {
 
 
 .drivers-card {
-  border-left: 4px solid #E6B51C !important;
+  border-left: 4px solid #D15410 !important;
 }
 
 .drivers-card {

@@ -1,10 +1,10 @@
-:root {
-  --primary-color: #FFC91F;
+﻿:root {
+  --primary-color: #EE6215;
   /* Main theme color */
   --primary-text-color: #222;
   /* Text color for on-primary backgrounds */
   --secondary-color: #f4f4f4;
-  --hover-background: #E6B51C;
+  --hover-background: #D15410;
   /* Darker shade of primary for hover */
   --dark-background: #3A3A3A;
   /* Dark background for sidebars/panels */
@@ -1116,7 +1116,7 @@ select.input-sm {
 
 /* --- Root Variables for Theme --- */
 :root {
-  --primary-color: #FFC91F;
+  --primary-color: #EE6215;
   --dark-bg: #212529;
   --light-bg: #f8f9fa;
   --white: #ffffff;
@@ -1272,7 +1272,7 @@ select.input-sm {
 }
 
 .btn-primary.btn-block:hover {
-  background-color: #e6b30f;
+  background-color: #D15410;
   transform: translateY(-2px);
 }
 
@@ -1368,7 +1368,7 @@ select.input-sm {
 
 /* --- Root Variables for Theme --- */
 :root {
-  --primary-color: #FFC91F;
+  --primary-color: #EE6215;
   --dark-text: #212529;
   --secondary-text: #6c757d;
   --border-color: #dee2e6;
@@ -1501,7 +1501,7 @@ select.input-sm {
 }
 
 .contact .btn.btn-primary.btn-block:hover {
-  background-color: #e6b30f;
+  background-color: #D15410;
   /* Darker yellow */
   transform: translateY(-3px);
   box-shadow: 0 4px 15px rgba(255, 201, 31, 0.4);
@@ -1540,7 +1540,7 @@ select.input-sm {
 
 
 .login-page .right {
-  background: #e6b30f !important
+  background: #D15410 !important
 }
 
 .login-box br {
@@ -1639,7 +1639,7 @@ iframe {
 
 
 .drivers-card {
-  border-left: 4px solid #E6B51C !important;
+  border-left: 4px solid #D15410 !important;
 }
 
 .drivers-card {
@@ -2194,7 +2194,7 @@ iframe {
 .sidebar-menu > li.active > a,
 .sidebar-menu > li.menu-open > a {
     color: #ffffff !important;
-    background-color: #ffc91f !important; /* The Teal/Green Background */
+    background-color: #EE6215 !important; /* The Teal/Green Background */
     border-left-color: #ffd962 !important; /* The Light Green Accent Bar */
     box-shadow: 0 4px 6px rgba(0,0,0,0.1);
 }
@@ -2210,7 +2210,7 @@ iframe {
 
 /* Submenu Container */
 .sidebar-menu .treeview-menu {
-    background-color: #ffc91f !important; /* Slightly Darker than main sidebar */
+    background-color: #EE6215 !important; /* Slightly Darker than main sidebar */
     padding-left: 0;
     margin-bottom: 5px;
 }
@@ -3414,7 +3414,7 @@ html.dark-mode textarea {
 
 /* --- 1. Dark Mode Variables & Global Resets --- */
 html.dark-mode {
-    --primary-color: #ffc91f;
+    --primary-color: #EE6215;
     --dark-bg-body: #0f172a;      /* Deep Slate Blue (Main BG) */
     --dark-bg-card: #1e293b;      /* Lighter Slate (Cards/Tables) */
     --dark-bg-hover: #334155;     /* Hover State */
@@ -3782,7 +3782,7 @@ html.dark-mode .dashboard-card p {
 
 /* Links inside cards */
 html.dark-mode .card-link {
-    color: #ffc91f !important; /* Use Primary Theme Color */
+    color: #EE6215 !important; /* Use Primary Theme Color */
 }
 
 html.dark-mode .card-link:hover {
@@ -3846,7 +3846,7 @@ html.dark-mode .navbar-nav > li > a.icon-circle {
 
 html.dark-mode .navbar-nav > li > a.icon-circle:hover,
 html.dark-mode .navbar-nav > li.open > a.icon-circle {
-    background-color: #ffc91f !important; /* Theme Yellow on Hover */
+    background-color: #EE6215 !important; /* Theme Yellow on Hover */
     color: #000 !important;               /* Black Icon on Hover */
 }
 
@@ -3872,7 +3872,7 @@ html.dark-mode .dropdown-menu li a {
 
 html.dark-mode .dropdown-menu li a:hover {
     background-color: #334155 !important; /* Hover state */
-    color: #ffc91f !important;
+    color: #EE6215 !important;
 }
 
 /* --- 3. User Profile Section --- */
@@ -3982,23 +3982,23 @@ html.dark-mode .form-control:focus {
 /* 8. SVG ILLUSTRATIONS (Changing the Yellow parts to #cd660e) */
 
 /* Fill colors (Circles, Text, Shirts, Chat Bubbles) */
-html.dark-mode .empty-state-container svg circle[fill="#FFC91F"],
-html.dark-mode .empty-state-container svg path[fill="#FFC91F"],
-html.dark-mode .empty-state-container svg text[fill="#FFC91F"],
+html.dark-mode .empty-state-container svg circle[fill="#EE6215"],
+html.dark-mode .empty-state-container svg path[fill="#EE6215"],
+html.dark-mode .empty-state-container svg text[fill="#EE6215"],
 html.dark-mode .empty-state-container svg path[fill="#ffca3b"], /* Light yellow bubble */
-html.dark-mode .empty-state-container svg path[fill="#E6B51C"]  /* Dark yellow bubble */
+html.dark-mode .empty-state-container svg path[fill="#D15410"]  /* Dark yellow bubble */
 {
     fill: #cd660e !important;
 }
 
 /* Stroke colors (Lines, Borders) */
-html.dark-mode .empty-state-container svg path[stroke="#FFC91F"],
-html.dark-mode .empty-state-container svg rect[stroke="#FFC91F"] {
+html.dark-mode .empty-state-container svg path[stroke="#EE6215"],
+html.dark-mode .empty-state-container svg rect[stroke="#EE6215"] {
     stroke: #cd660e !important;
 }
 
 /* Opacity elements (The faint background circles) */
-html.dark-mode .empty-state-container svg circle[fill="#FFC91F"][opacity="0.2"] {
+html.dark-mode .empty-state-container svg circle[fill="#EE6215"][opacity="0.2"] {
     fill: #cd660e !important;
     opacity: 0.2;
 }
@@ -4012,7 +4012,7 @@ html.dark-mode .empty-state-container svg circle[fill="#FFC91F"][opacity="0.2"] 
 
 
 /* =========================================
-   DARK MODE: COLOR OVERRIDE (#ffc91f AND #E6B51C -> #cd660e)
+   DARK MODE: COLOR OVERRIDE (#EE6215 AND #D15410 -> #cd660e)
    ========================================= */
 
 html.dark-mode {
@@ -4036,25 +4036,25 @@ html.dark-mode .btn-primary:hover {
     border-color: #cd660e !important;
 }
 
-/* 3. SVG ILLUSTRATIONS (Replacing #ffc91f AND #E6B51C) */
+/* 3. SVG ILLUSTRATIONS (Replacing #EE6215 AND #D15410) */
 
-/* Target the specific path in the Chat Icon that uses #E6B51C */
-html.dark-mode .empty-state-container svg path[fill="#E6B51C"],
-html.dark-mode .empty-state-container svg path[fill="#e6b51c"] {
+/* Target the specific path in the Chat Icon that uses #D15410 */
+html.dark-mode .empty-state-container svg path[fill="#D15410"],
+html.dark-mode .empty-state-container svg path[fill="#D15410"] {
     fill: #cd660e !important;
 }
 
 /* Target the standard yellow elements */
-html.dark-mode .empty-state-container svg circle[fill="#FFC91F"],
-html.dark-mode .empty-state-container svg path[fill="#FFC91F"],
-html.dark-mode .empty-state-container svg text[fill="#FFC91F"],
+html.dark-mode .empty-state-container svg circle[fill="#EE6215"],
+html.dark-mode .empty-state-container svg path[fill="#EE6215"],
+html.dark-mode .empty-state-container svg text[fill="#EE6215"],
 html.dark-mode .empty-state-container svg path[fill="#ffca3b"] {
     fill: #cd660e !important;
 }
 
 /* Target strokes/borders */
-html.dark-mode .empty-state-container svg path[stroke="#FFC91F"],
-html.dark-mode .empty-state-container svg rect[stroke="#FFC91F"] {
+html.dark-mode .empty-state-container svg path[stroke="#EE6215"],
+html.dark-mode .empty-state-container svg rect[stroke="#EE6215"] {
     stroke: #cd660e !important;
 }
 
