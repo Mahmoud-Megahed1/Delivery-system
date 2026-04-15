@@ -3,7 +3,7 @@
             <span class="logo-mini">
                 @if (isset($logoPath) && !empty($logoPath) && file_exists(public_path($logoPath)))
                 <img src="{{ $logoPath }}" alt="{{ $siteName ?? trans('global.site_title') }}" />
-                <span> Ridon </span>
+                <span> Piadgo </span>
                 @else
                 <b>{{ $siteName ?? trans('global.site_title') }}</b>
                 @endif
@@ -11,7 +11,7 @@
             <span class="logo-lg">
                 @if (isset($logoPath) && !empty($logoPath) && file_exists(public_path($logoPath)))
                 <img src="{{ $logoPath }}" alt="{{ $siteName ?? trans('global.site_title') }}" />
-                <span>Ridon</span>
+                <span>Piadgo</span>
                 @else
                 {{ $siteName ?? trans('global.site_title') }}
                 @endif
