@@ -1,4 +1,4 @@
-@extends('layouts.admin')
+﻿@extends('layouts.admin')
 
 
 @section('content')
@@ -88,7 +88,7 @@ const fuelTypeColumns = [
     { data: 'actions', name: 'actions', orderable: false, searchable: false }
 ];
 
-// ✅ Define initializeFeatureDataTable directly here
+// âœ… Define initializeFeatureDataTable directly here
 function initializeFeatureDataTable({ tableSelector, ajaxUrl, deleteUrl, columns, texts }) {
     const table = $(tableSelector).DataTable({
         processing: true,
@@ -139,7 +139,7 @@ function initializeFeatureDataTable({ tableSelector, ajaxUrl, deleteUrl, columns
     }
 }
 
-// ✅ Now call it as before
+// âœ… Now call it as before
 $(function () {
     initializeFeatureDataTable({
         tableSelector: '.datatable-vehicle-fuel-type',

@@ -1,4 +1,4 @@
-import 'dart:async';
+﻿import 'dart:async';
 import 'dart:convert';
 import 'dart:io';
 import 'package:flutter/cupertino.dart';
@@ -67,7 +67,7 @@ class _ItemHomeScreenState extends State<ItemHomeScreen>
         context
             .read<UpdateDriverParameterCubit>()
             .updateDriverId(driverId: driverIdUpdated.toString());
-        _startupBarrier = checkAndCleanRideOnStartup(driverId: driverIdUpdated);
+        _startupBarrier = checkAndCleanPiadgoStartup(driverId: driverIdUpdated);
 
         await _startupBarrier;
         // ignore_for_file: use_build_context_synchronously
@@ -152,7 +152,7 @@ class _ItemHomeScreenState extends State<ItemHomeScreen>
                       ],
                     ),
                     content: const Text(
-                      "Your documents have been successfully verified! 🎉\nYou are now ready to receive ride requests.",
+                      "Your documents have been successfully verified! ðŸŽ‰\nYou are now ready to receive ride requests.",
                       textAlign: TextAlign.center,
                       style: TextStyle(fontSize: 16, color: Colors.black54),
                     ),
@@ -763,7 +763,7 @@ class _ItemHomeScreenState extends State<ItemHomeScreen>
                                               ),
                                               const SizedBox(height: 10),
                                               Text(
-                                                "We’re currently reviewing your documents. You’ll get full access once verification is complete. Thanks for your patience!"
+                                                "Weâ€™re currently reviewing your documents. Youâ€™ll get full access once verification is complete. Thanks for your patience!"
                                                     .translate(context),
                                                 style: Theme.of(context)
                                                     .textTheme
@@ -1370,7 +1370,7 @@ class CustomBottomSheetForParcelState extends State<CustomBottomSheetForParcel>
                 RingtoneHelper().stopRingtone();
                 sendNotificationDirect(
                     playerId: widget.rideRequest!.playerId,
-                    title: "Ride Accepted 🚗",
+                    title: "Ride Accepted ðŸš—",
                     message:
                         "Your captain has accepted the ride and is on the way to pick you up."
                             .translate(context));

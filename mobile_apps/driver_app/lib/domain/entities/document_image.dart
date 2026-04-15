@@ -1,4 +1,4 @@
-
+﻿
 class DocumentImageModel {
   int? status;
   String? message;

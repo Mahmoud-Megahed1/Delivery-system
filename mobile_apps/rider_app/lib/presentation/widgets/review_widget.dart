@@ -1,4 +1,4 @@
-import 'package:ride_on/app/route_settings.dart';
+﻿import 'package:ride_on/app/route_settings.dart';
 import 'package:firebase_database/firebase_database.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';

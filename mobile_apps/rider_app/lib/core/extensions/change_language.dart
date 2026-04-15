@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+﻿import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:ride_on/core/extensions/workspace.dart';
 import 'package:ride_on/core/services/data_store.dart';
@@ -105,20 +105,20 @@ class _ChangeLanguageState extends State<ChangeLanguage> {
   }
 
   Widget _flagAvatar(String localeCode) {
-    String flag = "🌐";
+    String flag = "ðŸŒ";
 
     switch (localeCode) {
       case "en":
-        flag = "🇺🇸";
+        flag = "ðŸ‡ºðŸ‡¸";
         break;
       case "ar":
-        flag = "🇸🇦";
+        flag = "ðŸ‡¸ðŸ‡¦";
         break;
       case "hi":
-        flag = "🇮🇳";
+        flag = "ðŸ‡®ðŸ‡³";
         break;
       case "fr":
-        flag = "🇫🇷";
+        flag = "ðŸ‡«ðŸ‡·";
         break;
     }
 

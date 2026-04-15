@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 
 namespace App\Strategies;
 
@@ -46,7 +46,7 @@ class PayduniyaStrategy implements PaymentStrategy
             ],
             'store' => [
                 'name' => $general_name,
-                'tagline' => 'Découvrez votre propriété de rêve  avec Tukki',
+                'tagline' => 'DÃ©couvrez votre propriÃ©tÃ© de rÃªve  avec Tukki',
                 'postal_address' => 'ivory coast',
                 'phone' => '+41793630851',
                 'logo_url' => 'https://tukki-travel.com/wp-content/uploads/elementor/thumbs/footer-logo-q9n2bx7xji4ws3xuyg208g6g8wr1b0qh01vjf8wboi.png',

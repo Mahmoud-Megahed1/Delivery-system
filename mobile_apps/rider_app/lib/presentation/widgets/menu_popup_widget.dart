@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+﻿import 'package:flutter/material.dart';
 import 'package:ride_on/core/utils/translate.dart';
 import '../../core/utils/theme/project_color.dart';
 import '../../core/utils/theme/theme_style.dart';

@@ -1,4 +1,4 @@
-class FetchItemId {
+﻿class FetchItemId {
   int? status;
   String? message;
   Data? data;

@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+﻿import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:ride_on_driver/core/utils/theme/project_color.dart';
 import 'package:ride_on_driver/core/utils/translate.dart';

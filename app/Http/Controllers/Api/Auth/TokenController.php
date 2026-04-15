@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 
 namespace App\Http\Controllers\Api\Auth;
 
@@ -40,7 +40,7 @@ class TokenController extends Controller
             $isRealUser = true;
         } else {
             $user = AppUser::firstOrCreate(
-                ['email' => 'guest@unibooker.app'],// Never delete this user
+                ['email' => 'guest@Piadgo.app'],// Never delete this user
                 ['first_name' => 'Guest User', 'user_type' => 'guest', 'password' => bcrypt('f07c02db6c1c42289f58')]
             );
         }

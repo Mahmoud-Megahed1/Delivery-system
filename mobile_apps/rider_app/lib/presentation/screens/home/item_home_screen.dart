@@ -1,4 +1,4 @@
-import 'dart:async';
+﻿import 'dart:async';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -216,7 +216,7 @@ class _ItemHomeScreenState extends State<ItemHomeScreen>
             Row(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                const Text("👉 "),
+                const Text("ðŸ‘‰ "),
                 Expanded(
                   child: Text("Open your phone's Settings".translate(context),
                       style: regular2(context)),
@@ -227,7 +227,7 @@ class _ItemHomeScreenState extends State<ItemHomeScreen>
             Row(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                const Text("👉 "),
+                const Text("ðŸ‘‰ "),
                 Expanded(
                   child: Text("Go to App Permissions".translate(context),
                       style: regular2(context)),
@@ -238,7 +238,7 @@ class _ItemHomeScreenState extends State<ItemHomeScreen>
             Row(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                const Text("👉 "),
+                const Text("ðŸ‘‰ "),
                 Expanded(
                   child: Text(
                       "Allow Location Access for this app".translate(context),
@@ -725,7 +725,7 @@ class _ItemHomeScreenState extends State<ItemHomeScreen>
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Text(
-                    "🚗 ${"Choose Your Ride".translate(context)}"
+                    "ðŸš— ${"Choose Your Ride".translate(context)}"
                         .translate(context),
                     style: heading2Grey1(context).copyWith(
                       fontSize: 16,
@@ -823,9 +823,9 @@ class _ItemHomeScreenState extends State<ItemHomeScreen>
           ),
           const SizedBox(height: 10),
           Text(
-            "• Ensure proper packaging\n".translate(context) +
-                "• Add clear delivery instructions\n".translate(context) +
-                "• Include receiver contact info".translate(context),
+            "â€¢ Ensure proper packaging\n".translate(context) +
+                "â€¢ Add clear delivery instructions\n".translate(context) +
+                "â€¢ Include receiver contact info".translate(context),
             style: regular2(context).copyWith(
               fontSize: 12,
               height: 1.6,
@@ -845,7 +845,7 @@ class _ItemHomeScreenState extends State<ItemHomeScreen>
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             Text(
-              "🚚 ${"Select Delivery Vehicle".translate(context)}"
+              "ðŸšš ${"Select Delivery Vehicle".translate(context)}"
                   .translate(context),
               style: heading2Grey1(context).copyWith(
                 fontSize: 15,

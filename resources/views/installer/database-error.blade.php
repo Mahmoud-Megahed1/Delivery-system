@@ -1,4 +1,4 @@
-@extends('layouts.installer')
+﻿@extends('layouts.installer')
 
 @section('content')
     <div class="card">

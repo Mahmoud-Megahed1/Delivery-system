@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 
 return [
     'driver_detail' => 'Driver Detail',

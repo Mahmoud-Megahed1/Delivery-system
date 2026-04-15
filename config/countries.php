@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 
 return [
     ['code' => 'AF', 'name' => 'Afghanistan', 'dial_code' => '+93'],

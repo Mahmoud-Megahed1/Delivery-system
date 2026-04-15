@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+﻿import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import'package:ride_on_driver/core/services/data_store.dart';
 import 'package:ride_on_driver/core/utils/common_widget.dart';
@@ -23,15 +23,15 @@ class _SelectLanguageScreenState extends State<SelectLanguageScreen>
   int _selectedValue = lanBox.get("lanValue") ?? -1;
 
 final List<Map<String, dynamic>> localeList = [
-  {"name": "English", "locale": "en", "flag": "🇬🇧"},
-  {"name": "العربية (Arabic)", "locale": "ar", "flag": "🇸🇦"},
+  {"name": "English", "locale": "en", "flag": "ðŸ‡¬ðŸ‡§"},
+  {"name": "Ø§Ù„Ø¹Ø±Ø¨ÙŠØ© (Arabic)", "locale": "ar", "flag": "ðŸ‡¸ðŸ‡¦"},
 ];
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
-        // 🌈 Beautiful gradient background
+        // ðŸŒˆ Beautiful gradient background
         decoration: BoxDecoration(
           gradient: LinearGradient(
             colors: [
@@ -49,9 +49,9 @@ final List<Map<String, dynamic>> localeList = [
             child: Column(
               children: [
                 const Spacer(),
-                // 🌍 Heading
+                // ðŸŒ Heading
                 Text(
-                  "🌐 ${"Choose Your Language".translate(context)}",
+                  "ðŸŒ ${"Choose Your Language".translate(context)}",
                   style: TextStyle(
                     fontSize: 28,
                     fontWeight: FontWeight.bold,
@@ -71,7 +71,7 @@ final List<Map<String, dynamic>> localeList = [
                 ),
                 const SizedBox(height: 40),
 
-                // 🔥 Animated Language Options
+                // ðŸ”¥ Animated Language Options
                 BlocBuilder<LanguageCubit, LanguageState>(
                   builder: (context, state) {
                     return Column(

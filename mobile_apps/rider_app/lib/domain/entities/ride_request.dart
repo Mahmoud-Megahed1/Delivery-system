@@ -1,4 +1,4 @@
-class RideRequest {
+﻿class RideRequest {
   String? rideId;
   String? bookingId;
   String? otp;

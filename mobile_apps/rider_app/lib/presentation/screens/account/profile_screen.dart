@@ -1,4 +1,4 @@
-import 'dart:convert';
+﻿import 'dart:convert';
 import 'dart:io';
 import 'package:ride_on/core/utils/translate.dart';
 import 'package:ride_on/domain/entities/login_data.dart' as logmod;

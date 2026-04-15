@@ -1,4 +1,4 @@
-class InitialRideRequest {
+﻿class InitialRideRequest {
   final String rideId;
   final String pickupLocation;
   final String dropoffLocation;

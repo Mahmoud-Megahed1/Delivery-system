@@ -1,4 +1,4 @@
-// ignore_for_file: use_build_context_synchronously
+﻿// ignore_for_file: use_build_context_synchronously
 
 import 'package:ride_on/domain/entities/login_data.dart';
 import 'package:ride_on/data/repositories/auth_repository.dart';

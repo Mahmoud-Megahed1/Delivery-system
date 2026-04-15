@@ -1,4 +1,4 @@
-class BookingSucessModel {
+﻿class BookingSucessModel {
   int? status;
   String? message;
   Data? data;

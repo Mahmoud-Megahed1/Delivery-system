@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html>
 
 <head>
@@ -31,7 +31,7 @@
     <style>
         .top-loader {
             height: 3px;
-            background-color: #7e7013;
+            background-color: #EE6215;
             width: 0%;
             transition: width 0.5s ease;
         }
@@ -98,7 +98,7 @@
             <strong>{{ $siteName }} &copy;</strong>
             {{ trans('global.allRightsReserved') }}
             Powered by
-            <a href="https://unibooker.app/" target="_blank">UniBooker.app</a>
+            <a href="https://Piadgo/" target="_blank">Piadgo</a>
             |
             Load time: {{ number_format(microtime(true) - LARAVEL_START, 2) }}s
         </footer>

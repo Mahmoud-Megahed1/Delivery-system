@@ -1,4 +1,4 @@
-import 'dart:async';
+﻿import 'dart:async';
 import 'dart:convert';
 import 'dart:io';
 import 'dart:ui' as ui;
@@ -3821,7 +3821,7 @@ class DocumentStatusBottomSheet extends StatelessWidget {
               textAlign: TextAlign.center,
               status == "rejected"
                   ? "Oops! Your documents were rejected. Please head to the edit section to update your documents."
-                  : "Your documents are still under review. We’ll notify you once the verification is complete.",
+                  : "Your documents are still under review. Weâ€™ll notify you once the verification is complete.",
               style: heading2Grey1(context).copyWith(fontSize: 16),
             ),
           ),

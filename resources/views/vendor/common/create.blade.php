@@ -1,4 +1,4 @@
-@extends('vendor.layout')
+﻿@extends('vendor.layout')
 @section('content')
 @php $i = 0; $j = 0;
 if($title=='vehicles')

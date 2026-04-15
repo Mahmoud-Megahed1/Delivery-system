@@ -1,4 +1,4 @@
-import 'package:ride_on/domain/entities/history_data.dart';
+﻿import 'package:ride_on/domain/entities/history_data.dart';
 import 'package:ride_on/data/repositories/history_repository.dart';
 import 'package:equatable/equatable.dart';
 import 'package:flutter/material.dart';

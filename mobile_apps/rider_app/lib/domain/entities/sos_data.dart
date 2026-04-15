@@ -1,4 +1,4 @@
-class SosResponse {
+﻿class SosResponse {
   int? status;
   String? message;
   SosData? data;

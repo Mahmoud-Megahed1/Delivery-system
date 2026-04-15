@@ -1,4 +1,4 @@
-// ignore_for_file: empty_catches
+﻿// ignore_for_file: empty_catches
 
 import 'dart:collection';
 import 'dart:convert';

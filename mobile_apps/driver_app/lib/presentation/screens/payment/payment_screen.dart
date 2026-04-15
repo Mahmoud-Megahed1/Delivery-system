@@ -1,4 +1,4 @@
-import 'package:cloud_firestore/cloud_firestore.dart';
+﻿import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:ride_on_driver/core/services/data_store.dart';
@@ -58,7 +58,7 @@ class _PaymentScreenState extends State<PaymentScreen> {
           "Has the payment been received by cash? If yes, click to proceed.");
     } else if (method == PaymentMethod.online) {
       _showConfirmationDialog(context, "online",
-          "Are you sure you want to confirm that you’ve received this payment online?");
+          "Are you sure you want to confirm that youâ€™ve received this payment online?");
     }
   }
 

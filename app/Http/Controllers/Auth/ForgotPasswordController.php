@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 
 namespace App\Http\Controllers\Auth;
 
@@ -62,7 +62,7 @@ class ForgotPasswordController extends Controller
 
         Config::set('mail.from', [
             'address' => $smtpConfig['username'],
-            'name' => config('app.name', 'Vehicle Unibooker'),
+            'name' => config('app.name', 'Vehicle Piadgo'),
         ]);
     }
 

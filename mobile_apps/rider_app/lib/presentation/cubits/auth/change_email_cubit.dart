@@ -1,4 +1,4 @@
-// ignore_for_file: depend_on_referenced_packages
+﻿// ignore_for_file: depend_on_referenced_packages
 
 import 'package:ride_on/domain/entities/check_email.dart';
 import 'package:ride_on/data/repositories/auth_repository.dart';

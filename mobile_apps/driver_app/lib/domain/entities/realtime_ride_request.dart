@@ -1,4 +1,4 @@
-class RealTimeRideRequest {
+﻿class RealTimeRideRequest {
   String? otp;
   String? adminCommission;
   String? rideId;

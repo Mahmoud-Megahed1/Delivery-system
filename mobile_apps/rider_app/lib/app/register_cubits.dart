@@ -1,4 +1,4 @@
-import 'package:ride_on/data/repositories/auth_repository.dart';
+﻿import 'package:ride_on/data/repositories/auth_repository.dart';
 import 'package:ride_on/data/repositories/history_repository.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:provider/single_child_widget.dart';

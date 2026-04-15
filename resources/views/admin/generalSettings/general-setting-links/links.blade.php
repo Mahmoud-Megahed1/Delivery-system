@@ -1,4 +1,4 @@
-<ul class="nav navbar-pills nav-tabs nav-stacked no-margin" role="tablist">
+﻿<ul class="nav navbar-pills nav-tabs nav-stacked no-margin" role="tablist">
     <li class="{{ request()->routeIs('admin.settings') ? 'active' : '' }}">
         <a href="{{ route('admin.settings') }}" data-group="profile">{{ trans('global.general_title') }}</a>
     </li>

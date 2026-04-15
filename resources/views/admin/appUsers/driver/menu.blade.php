@@ -1,4 +1,4 @@
-<div class="driver-header">
+﻿<div class="driver-header">
             <div class="title">{{ $appUser->first_name }} {{ $appUser->last_name }}</div>
             <div class="actions" style="gap: 5px;">
        @php
@@ -8,39 +8,39 @@ $navItems = [
         'url' => 'admin/driver/profile/' . $appUser->id,
         'label' => trans('user.overview'),
         'class' => 'btn-green',
-        'icon' => '👤', // Profile/Overview
+        'icon' => 'ðŸ‘¤', // Profile/Overview
     ],
     [
         'url' => 'admin/driver/financial/' . $appUser->id,
         'label' => trans('user.financial'),
         'class' => 'btn-green',
-        'icon' => '💰', // Financial info
+        'icon' => 'ðŸ’°', // Financial info
     ],
       [
         'url' => 'admin/payouts/?from=&to=&customer=&vendor=' . $appUser->id,
         'label' => trans('user.payout'),
         'class' => 'btn-gray',
-        'icon' => '💸', // Payouts
+        'icon' => 'ðŸ’¸', // Payouts
         'target' => '_blank',
     ],
     [
         'url' => 'admin/bookings?from=&to=&customer=&host=' . $appUser->id . '&status=&btn=',
         'label' => trans('user.bookings'),
         'class' => 'btn-green',
-        'icon' => '📅', // Bookings
+        'icon' => 'ðŸ“…', // Bookings
         'target' => '_blank',
     ],
     [
         'url' => 'admin/driver/account/' . $appUser->id,
         'label' => trans('user.account'),
         'class' => 'btn-red',
-        'icon' => '⚙️', // Account settings
+        'icon' => 'âš™ï¸', // Account settings
     ],
     [
         'url' => 'admin/driver/document/' . $appUser->id,
         'label' => trans('user.driver_document'),
         'class' => 'btn-orange',
-        'icon' => '📄', // Documents
+        'icon' => 'ðŸ“„', // Documents
     ],
     [
         'url' => 'admin/driver/stripe/' . $appUser->id,
@@ -52,7 +52,7 @@ $navItems = [
         'url' => 'admin/driver/vehicle/' . $appUser->id,
         'label' => trans('user.vehicle'),
         'class' => 'btn-gray',
-        'icon' => '🚗', // Vehicle
+        'icon' => 'ðŸš—', // Vehicle
     ]
 ];
 @endphp

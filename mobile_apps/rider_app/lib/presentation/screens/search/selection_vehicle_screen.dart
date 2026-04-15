@@ -1,4 +1,4 @@
-import 'dart:async';
+﻿import 'dart:async';
 import 'dart:typed_data';
 import 'package:ride_on/core/extensions/workspace.dart';
 import 'package:firebase_database/firebase_database.dart';
@@ -236,7 +236,7 @@ class _SelectionVehicleScreenState extends State<SelectionVehicleScreen> {
                     ),
                     child: ListView(
                       controller:
-                      scrollController, // ✅ Required for drag + scroll
+                      scrollController, // âœ… Required for drag + scroll
                       children: [
                         const SizedBox(height: 10),
                         Center(

@@ -1,4 +1,4 @@
-class GetItemVehicleModel {
+﻿class GetItemVehicleModel {
   int? status;
   String? message;
   Data? data;

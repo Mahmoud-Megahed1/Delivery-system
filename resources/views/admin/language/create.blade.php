@@ -1,4 +1,4 @@
-@extends('layouts.admin')
+﻿@extends('layouts.admin')
 @section('content')
 <div class="col-md-12">
 					<div class="box box-info">

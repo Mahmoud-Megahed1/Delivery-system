@@ -1,4 +1,4 @@
-@extends('layouts.installer')
+﻿@extends('layouts.installer')
 
 @section('steps')
     <div class="step-item active">

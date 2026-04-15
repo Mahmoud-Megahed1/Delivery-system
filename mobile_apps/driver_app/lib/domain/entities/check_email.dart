@@ -1,4 +1,4 @@
-library;
+﻿library;
 
 class CheckEmail {
   CheckEmail({

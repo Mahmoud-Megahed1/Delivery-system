@@ -1,4 +1,4 @@
-class CheckMobileModel {
+﻿class CheckMobileModel {
   CheckMobileModel({
     num? status,
     String? message,

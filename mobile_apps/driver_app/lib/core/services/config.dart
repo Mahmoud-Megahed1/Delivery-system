@@ -1,4 +1,4 @@
-class Config {
+﻿class Config {
   static const googleKey = "YOUR_GOOGLE_MAPS_API_KEY_HERE";
   static const String oneSiginalAppid = 'YOUR_ONESIGNAL_APP_ID_HERE';
   static const String oneSiginalApiKey = 'YOUR_ONESIGNAL_API_KEY_HERE';

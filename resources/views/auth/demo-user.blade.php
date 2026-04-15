@@ -1,4 +1,4 @@
-<div class="col-xs-12">
+﻿<div class="col-xs-12">
     <div class="d-flex flex-wrap align-items-center justify-content-between">
         <div class="copy-container">
             <span><strong>Email</strong>: admin@sizhitsolutions.com</span><br>

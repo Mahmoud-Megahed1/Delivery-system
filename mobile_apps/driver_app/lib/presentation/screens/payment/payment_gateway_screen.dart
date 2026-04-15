@@ -1,4 +1,4 @@
-import 'dart:async';
+﻿import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:flutter_inappwebview/flutter_inappwebview.dart';
 import 'package:flutter_keyboard_visibility/flutter_keyboard_visibility.dart';
@@ -65,16 +65,16 @@ class _PaymentGatewayScreenState extends State<PaymentGatewayScreen> {
 
     if (url.contains("wallet_recharge_success")) {
       endSession(success: true);
-      debugPrint('✅ wallet_recharge_success');
+      debugPrint('âœ… wallet_recharge_success');
     } else if (url.contains("wallet_recharge_fail")) {
       endSession(message: "Your recharge failed");
-      debugPrint('❌ wallet_recharge_fail');
+      debugPrint('âŒ wallet_recharge_fail');
     } else if (url.contains("payment_fail")) {
       endSession(message: "Your booking failed");
-      debugPrint('❌ payment_fail');
+      debugPrint('âŒ payment_fail');
     } else if (url.contains("/invalid-order")) {
       endSession(message: "Invalid Order");
-      debugPrint('⚠️ invalid-order');
+      debugPrint('âš ï¸ invalid-order');
     }
   }
 

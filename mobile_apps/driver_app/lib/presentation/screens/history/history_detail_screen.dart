@@ -1,4 +1,4 @@
-import 'dart:convert';
+﻿import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -457,7 +457,7 @@ class _HistoryDetailScreenState extends State<HistoryDetailScreen> {
 
   String formatTimestamp(String isoDate) {
     DateTime dateTime = DateTime.parse(isoDate);
-    String formatted = DateFormat('MMM dd, yyyy – h:mm a').format(dateTime);
+    String formatted = DateFormat('MMM dd, yyyy â€“ h:mm a').format(dateTime);
     return formatted;
   }
 

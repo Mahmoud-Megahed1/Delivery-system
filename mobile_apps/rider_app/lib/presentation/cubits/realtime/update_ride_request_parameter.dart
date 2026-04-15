@@ -1,4 +1,4 @@
-// ignore_for_file: empty_catches
+﻿// ignore_for_file: empty_catches
 
 import 'package:firebase_database/firebase_database.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';

@@ -1,4 +1,4 @@
-// ignore_for_file: unnecessary_string_interpolations
+﻿// ignore_for_file: unnecessary_string_interpolations
 
 import 'dart:collection';
 import 'dart:convert';

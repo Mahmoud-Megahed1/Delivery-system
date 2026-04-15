@@ -1,4 +1,4 @@
-class ServiceTypeResponse {
+﻿class ServiceTypeResponse {
   int? status;
   String? message;
   ServiceTypeData? data;

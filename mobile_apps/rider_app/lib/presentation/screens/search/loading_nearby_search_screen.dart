@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+﻿import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
@@ -135,11 +135,11 @@ class _LoadingNearbySearchScreenState extends State<LoadingNearbySearchScreen> {
 
 
      if (distance != null) {
-  // Too short distance (≤ 0.1 km)
+  // Too short distance (â‰¤ 0.1 km)
   if (distance! <= 0.1) {
     setState(() {
       _errorMessage =
-          'Distance is too short (≤ 0.1 km). Please select a farther drop-off location.';
+          'Distance is too short (â‰¤ 0.1 km). Please select a farther drop-off location.';
     });
     return;
   }

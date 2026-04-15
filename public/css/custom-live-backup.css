@@ -6,7 +6,7 @@
   --secondary-color: #f4f4f4;
   --hover-background: #D15410;
   /* Darker shade of primary for hover */
-  --dark-background: #3A3A3A;
+  --dark-background: #5F5F5F;
   /* Dark background for sidebars/panels */
   --required-color: red;
 }
@@ -1280,7 +1280,7 @@ select.input-sm {
 .copy-container {
   margin-top: 30px;
   padding: 15px;
-  background-color: #fef8e3;
+  background-color: #FFF0E6;
   border: 1px dashed #f0c340;
   border-radius: 8px;
   font-size: 0.9rem;
@@ -1511,7 +1511,7 @@ select.input-sm {
 .contact .copy-container {
   margin-top: 30px;
   padding: 15px;
-  background-color: #fef8e3;
+  background-color: #FFF0E6;
   border: 1px dashed #f0c340;
   border-radius: 8px;
   font-size: 0.9rem;
@@ -1647,7 +1647,7 @@ iframe {
 }
 
 .main-header .logo .logo-lg {
-  background: #3a3a3a !important
+  background: #5F5F5F !important
 }
 
 .main-header .logo {
@@ -2442,13 +2442,13 @@ iframe {
 
 /* CARD 2: YELLOW - "Verified Drivers" look */
 .col-md-3:nth-of-type(2) .dashboard-card i {
-    background-color: #f59e0b; /* Yellow Icon Bg */
+    background-color: #EE6215; /* Yellow Icon Bg */
 }
 .col-md-3:nth-of-type(2) .dashboard-card::after {
-    background-color: #f59e0b;
+    background-color: #EE6215;
 }
 .col-md-3:nth-of-type(2) .dashboard-card .card-link {
-    color: #f59e0b;
+    color: #EE6215;
 }
 
 /* CARD 3: ORANGE - "Unverified Drivers" look */
@@ -2534,7 +2534,7 @@ iframe {
 .col-md-3:nth-of-type(1) .dashboard-card i::after { border-color: #10b981; }
 
 /* Card 2: Yellow Ring */
-.col-md-3:nth-of-type(2) .dashboard-card i::after { border-color: #f59e0b; }
+.col-md-3:nth-of-type(2) .dashboard-card i::after { border-color: #EE6215; }
 
 /* Card 3: Orange Ring */
 .col-md-3:nth-of-type(3) .dashboard-card i::after { border-color: #f97316; }
@@ -2591,7 +2591,7 @@ iframe {
 
 /* --- 1. The Button Style --- */
 .btn-quick-links {
-    background-color: #ffca3b; /* Mint Green Background */
+    background-color: #EE6215; /* Mint Green Background */
     color: #000;            /* Dark Green Text */
     border: none;
     border-radius: 6px;
@@ -2606,7 +2606,7 @@ iframe {
 }
 
 .btn-quick-links:hover {
-    background-color: #f59e0b;
+    background-color: #EE6215;
 }
 
 .btn-quick-links i {
@@ -2683,7 +2683,7 @@ iframe {
 .ql-icon-circle {
     width: 50px;
     height: 50px;
-    background-color: #f9d890; /* Light Grey BG */
+    background-color: #FFF0E6; /* Light Grey BG */
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -3234,14 +3234,14 @@ a[title="SOS"] {
 
 /* Active/Selected State (The Green Highlight in your image) */
 .select-dropdown-list li a:hover {
-    background-color: #ffca3b !important; /* Very light teal/mint */
+    background-color: #EE6215 !important; /* Very light teal/mint */
     color: #fff !important;           /* Darker teal text */
 
 }
 
 
 .select-dropdown-list li.active {
-    background-color: #ffca3b !important; /* Very light teal/mint */
+    background-color: #EE6215 !important; /* Very light teal/mint */
     color: #fff !important;           /* Darker teal text */
 
 }

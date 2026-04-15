@@ -1,4 +1,4 @@
-@extends('layouts.admin')
+﻿@extends('layouts.admin')
 @section('content')
 @php $i = 0; $j = 0; @endphp
 <style>

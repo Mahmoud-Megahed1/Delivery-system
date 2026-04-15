@@ -1,4 +1,4 @@
-// ignore_for_file: depend_on_referenced_packages
+﻿// ignore_for_file: depend_on_referenced_packages
 
 import 'dart:convert';
 import 'package:ride_on/domain/entities/get_item_price.dart';

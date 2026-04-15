@@ -1,4 +1,4 @@
-class GeneralDataModel {
+﻿class GeneralDataModel {
   int? status;
   String? message;
   Data? data;

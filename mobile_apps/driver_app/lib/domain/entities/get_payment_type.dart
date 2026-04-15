@@ -1,4 +1,4 @@
-class GetPaymentTypeModel {
+﻿class GetPaymentTypeModel {
   final int? status;
   final String? message;
   final Data? data;

@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+﻿import 'package:flutter/material.dart';
 import 'package:ride_on_driver/core/utils/translate.dart';
 
 import '../../../core/utils/common_widget.dart';
@@ -24,7 +24,7 @@ class _DriverFAQScreenState extends State<DriverFAQScreen> {
           "Tap 'Accept' when a ride request appears. Ignore it if you don't wish to accept."
     },
     {
-      "question": "What if the rider doesn’t show up?",
+      "question": "What if the rider doesnâ€™t show up?",
       "answer":
           "Wait 5-10 minutes, then cancel with the reason 'Rider No-show'."
     },

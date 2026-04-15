@@ -1,4 +1,4 @@
-class SliderResponse {
+﻿class SliderResponse {
   int? status;
   String? message;
   List<SliderData>? data;

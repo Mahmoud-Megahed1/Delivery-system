@@ -1,4 +1,4 @@
-// ignore_for_file: depend_on_referenced_packages
+﻿// ignore_for_file: depend_on_referenced_packages
 
 import 'dart:async';
 import 'dart:convert';
@@ -140,7 +140,7 @@ class DriverNearByCubit extends Cubit<DriverNearByState> {
           return null;
         }
 
-        // 🔥 Check timestamp validity
+        // ðŸ”¥ Check timestamp validity
         final context = navigatorKey.currentContext;
         if (context != null) {
           final lastActiveState = context.read<LastActiveApp>().state.value;
@@ -165,7 +165,7 @@ class DriverNearByCubit extends Cubit<DriverNearByState> {
             debugPrint("Driver ${doc.id} skipped: LastActiveApp is empty or 0");
           }
         } else {
-          debugPrint("No valid context found — skipping driver ${doc.id}");
+          debugPrint("No valid context found â€” skipping driver ${doc.id}");
         }
 
         if (geopoint != null) {

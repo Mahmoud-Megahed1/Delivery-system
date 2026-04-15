@@ -1,4 +1,4 @@
-import 'dart:async';
+﻿import 'dart:async';
 import 'dart:convert';
 import 'dart:ui' as ui;
 import 'package:geolocator/geolocator.dart';
@@ -305,7 +305,7 @@ class _SendRideRequestScreenState extends State<SendRideRequestScreen> {
     }
 
     if (useGoogleApi) {
-      debugPrint('📍 Fetching using Google Distance Matrix API (with traffic)');
+      debugPrint('ðŸ“ Fetching using Google Distance Matrix API (with traffic)');
 
       final url = 'https://maps.googleapis.com/maps/api/distancematrix/json?'
           'origins=$fromLat,$fromLng'
@@ -333,18 +333,18 @@ class _SendRideRequestScreenState extends State<SendRideRequestScreen> {
               fetchDuration = durationText;
             });
             debugPrint(
-                '✅ Distance: $distanceText | Duration (with traffic): $durationText');
+                'âœ… Distance: $distanceText | Duration (with traffic): $durationText');
           } else {
-            debugPrint('⚠️ Error: ${data['rows'][0]['elements'][0]['status']}');
+            debugPrint('âš ï¸ Error: ${data['rows'][0]['elements'][0]['status']}');
           }
         } else {
-          debugPrint('❌ Failed: ${response.statusCode}');
+          debugPrint('âŒ Failed: ${response.statusCode}');
         }
       } catch (e) {
-        debugPrint('❌ Exception fetching distance/time: $e');
+        debugPrint('âŒ Exception fetching distance/time: $e');
       }
     } else {
-      debugPrint('📍 Using Geolocator (approximation)');
+      debugPrint('ðŸ“ Using Geolocator (approximation)');
 
       final meters = Geolocator.distanceBetween(fromLat, fromLng, toLat, toLng);
       final pretty = _formatDistanceAndEta(meters, avgSpeedKmph: 40);
@@ -1018,7 +1018,7 @@ class _SendRideRequestScreenState extends State<SendRideRequestScreen> {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Text(
-          "Finding your driver...\nWe’re looking for the best match for you!"
+          "Finding your driver...\nWeâ€™re looking for the best match for you!"
               .translate(context),
           textAlign: TextAlign.start,
           style: heading3Grey1(context),
@@ -1807,7 +1807,7 @@ class _CountdownSegmentedBarState extends State<CountdownSegmentedBar>
                 ),
                 const SizedBox(height: 10),
                 Text(
-                  "We couldn’t find any drivers around your pickup location. Please try again after a moment."
+                  "We couldnâ€™t find any drivers around your pickup location. Please try again after a moment."
                       .translate(context),
                   textAlign: TextAlign.center,
                   style: heading3Grey1(context).copyWith(

@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 
 namespace App\Jobs;
 
@@ -139,9 +139,9 @@ class DistributeVendorCommissionJob implements ShouldQueue
                     );
             });
 
-            Log::info('✅ Vendor wallet updated successfully');
+            Log::info('âœ… Vendor wallet updated successfully');
         } catch (\Throwable $e) {
-            Log::error('❌ Vendor wallet update failed: '.$e->getMessage(), [
+            Log::error('âŒ Vendor wallet update failed: '.$e->getMessage(), [
                 'exception' => $e,
             ]);
         }

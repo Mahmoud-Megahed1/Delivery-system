@@ -1,4 +1,4 @@
-class StaticModel {
+﻿class StaticModel {
   StaticModel({
     num? status,
     String? message,

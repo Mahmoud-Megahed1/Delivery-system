@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 
 return [
     'password' => 'Passwords must be at least eight characters and match the confirmation.',

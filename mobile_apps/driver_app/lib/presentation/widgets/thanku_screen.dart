@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+﻿import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:ride_on_driver/core/utils/translate.dart';
 import 'package:ride_on_driver/presentation/widgets/custome_review_widget.dart';
@@ -189,7 +189,7 @@ class _ThankuScreenState extends State<ThankuScreen>
                     child: Column(
                       children: [
                         Text(
-                          "${"Ride Completed Successfully!".translate(context)} 🎉",
+                          "${"Ride Completed Successfully!".translate(context)} ðŸŽ‰",
                           style: heading2Grey1(context).copyWith(
                             fontSize: 18,
                             fontWeight: FontWeight.w800,
@@ -341,7 +341,7 @@ class _ThankuScreenState extends State<ThankuScreen>
           ),
           const SizedBox(height: 12),
           Text(
-            "You’ve successfully completed this ride. Your dedication helps our riders reach their destination safely and on time.".translate(context),
+            "Youâ€™ve successfully completed this ride. Your dedication helps our riders reach their destination safely and on time.".translate(context),
             style: regular2(context),
             textAlign: TextAlign.center,
           ),

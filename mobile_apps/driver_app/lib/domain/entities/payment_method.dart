@@ -1,4 +1,4 @@
-class PaymentMethodModel {
+﻿class PaymentMethodModel {
   int? status;
   String? message;
   Data? data;

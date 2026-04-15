@@ -1280,7 +1280,7 @@ select.input-sm {
 .copy-container {
   margin-top: 30px;
   padding: 15px;
-  background-color: #fef8e3;
+  background-color: #FFF0E6;
   border: 1px dashed #f0c340;
   border-radius: 8px;
   font-size: 0.9rem;
@@ -1511,7 +1511,7 @@ select.input-sm {
 .contact .copy-container {
   margin-top: 30px;
   padding: 15px;
-  background-color: #fef8e3;
+  background-color: #FFF0E6;
   border: 1px dashed #f0c340;
   border-radius: 8px;
   font-size: 0.9rem;
@@ -1634,7 +1634,7 @@ iframe {
 }
 
 .main-header .logo .logo-lg {
-  background: #3a3a3a !important
+  background: #5F5F5F !important
 }
 
 .main-header .logo {

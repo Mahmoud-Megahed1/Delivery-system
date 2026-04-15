@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+﻿import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:ride_on_driver/core/utils/translate.dart';
 import '../../../core/utils/common_widget.dart';
@@ -24,7 +24,7 @@ class _OnboardingscreenState extends State<Onboardingscreen> {
       "image": "assets/images/onBoarding2.png",
       "title": "Upload Documents",
       "description":
-          "We would like to get to know you better. Let’s get \n some documents uploaded!"
+          "We would like to get to know you better. Letâ€™s get \n some documents uploaded!"
     },
     {
       "image": "assets/images/onBoarding3.png",

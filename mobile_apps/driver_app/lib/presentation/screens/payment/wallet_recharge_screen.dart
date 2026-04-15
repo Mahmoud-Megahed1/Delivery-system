@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+﻿import 'package:flutter/material.dart';
 
 import 'package:ride_on_driver/core/utils/translate.dart';
 import 'package:ride_on_driver/presentation/screens/payment/payment_gateway_screen.dart';
@@ -96,7 +96,7 @@ class _WalletRechargeScreenState extends State<WalletRechargeScreen> {
               ),
               const SizedBox(height: 20),
 
-              // 💵 Compact Amount Input
+              // ðŸ’µ Compact Amount Input
               Text(
                 "Enter Amount".translate(context),
                 style: heading3Grey1(context),

@@ -1,4 +1,4 @@
-class GetMakeModel {
+﻿class GetMakeModel {
   GetMakeModel({
     num? status,
     String? message,

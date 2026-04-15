@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 
 use App\Http\Controllers\Front\WalletRecharge\WalletRechargeController;
 use Illuminate\Support\Facades\Route;

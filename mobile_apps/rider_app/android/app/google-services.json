@@ -1,16 +1,16 @@
-{
+﻿{
   "project_info": {
     "project_number": "688750971224",
-    "firebase_url": "https://rideon-1a627-default-rtdb.firebaseio.com",
-    "project_id": "rideon-1a627",
-    "storage_bucket": "rideon-1a627.firebasestorage.app"
+    "firebase_url": "https://Piadgo-1a627-default-rtdb.firebaseio.com",
+    "project_id": "Piadgo-1a627",
+    "storage_bucket": "Piadgo-1a627.firebasestorage.app"
   },
   "client": [
     {
       "client_info": {
         "mobilesdk_app_id": "1:688750971224:android:65097ee054f090958bfd2d",
         "android_client_info": {
-          "package_name": "com.sizh.rideon.rider.taxiapp"
+          "package_name": "com.sizh.Piadgo.rider.taxiapp"
         }
       },
       "oauth_client": [
@@ -18,7 +18,7 @@
           "client_id": "688750971224-pfehh7gu8pffd2kkb800m22rbk14vrd5.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
-            "package_name": "com.sizh.rideon.rider.taxiapp",
+            "package_name": "com.sizh.Piadgo.rider.taxiapp",
             "certificate_hash": "11bbbe077ebc49cc5c933a997a0e9294761c969c"
           }
         },
@@ -43,7 +43,7 @@
               "client_id": "688750971224-fuv3o15s1h61p0d9ajrgvg177k07nd0j.apps.googleusercontent.com",
               "client_type": 2,
               "ios_info": {
-                "bundle_id": "com.sizh.rideon.rider.taxiapp"
+                "bundle_id": "com.sizh.Piadgo.rider.taxiapp"
               }
             }
           ]

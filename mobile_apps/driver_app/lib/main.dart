@@ -1,4 +1,4 @@
-import 'dart:async';
+﻿import 'dart:async';
 import 'dart:io';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter_local_notifications/flutter_local_notifications.dart';
@@ -67,7 +67,7 @@ class MyApp extends StatefulWidget {
 
 class MyAppState extends State<MyApp> with WidgetsBindingObserver {
   static const platform =
-      MethodChannel('com.sizh.rideon.driver.taxiapp/floating_bubble');
+      MethodChannel('com.sizh.Piadgo.driver.taxiapp/floating_bubble');
   StreamSubscription<Position>? positionStreamSubscription;
   DateTime? lastUpdateTime;
   @override
@@ -350,21 +350,21 @@ Future<void> showRideNotification({
   required double distance,
   bool playSound = false, // Add this parameter
 }) async {
-  const String title = '🚖 New Ride Request!';
+  const String title = 'ðŸš– New Ride Request!';
 
   final String body = '''
-💰 Fare: $currency ${fare.toStringAsFixed(0)}     📏 ${distance.toStringAsFixed(1)} km
+ðŸ’° Fare: $currency ${fare.toStringAsFixed(0)}     ðŸ“ ${distance.toStringAsFixed(1)} km
 
-🟢 Pickup: $pickup
-🔴 Drop:   $drop
+ðŸŸ¢ Pickup: $pickup
+ðŸ”´ Drop:   $drop
 
-🕒 Accept within 50 seconds
+ðŸ•’ Accept within 50 seconds
 ''';
 
   final androidDetails = AndroidNotificationDetails(
     'ride_channel',
     'Ride Request',
-    channelDescription: 'RideOn Driver ride notifications',
+    channelDescription: 'Piadgo Driver ride notifications',
     importance: Importance.max,
     priority: Priority.high,
     icon: '@mipmap/ic_launcher',

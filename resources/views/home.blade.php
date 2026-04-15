@@ -1,4 +1,4 @@
-@extends('layouts.admin')
+﻿@extends('layouts.admin')
 
 @section('content')
     @php $currentDate = date('Y-m-d'); @endphp
@@ -12,13 +12,13 @@
             @endif
 @if($installerWarning)
     <div class="alert alert-danger">
-        ⚠ Installer files detected!
+        âš  Installer files detected!
         <br>
         <strong>Your system is not secure.</strong>
         <br><br>
         <a href="{{ route('admin.deleteInstaller') }}"
            class="btn btn-danger btn-sm">
-           🔥 Delete Installer Files Automatically
+           ðŸ”¥ Delete Installer Files Automatically
         </a>
     </div>
 @endif

@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 
 // app/Traits/SMSTrait.php
 

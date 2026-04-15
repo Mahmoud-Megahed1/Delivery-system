@@ -1,4 +1,4 @@
-import 'package:ride_on/core/services/http.dart';
+﻿import 'package:ride_on/core/services/http.dart';
 import 'package:ride_on/core/extensions/workspace.dart';
 import 'package:flutter/material.dart';
 

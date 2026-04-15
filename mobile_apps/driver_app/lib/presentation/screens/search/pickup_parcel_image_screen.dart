@@ -1,4 +1,4 @@
-import 'dart:io';
+﻿import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:ride_on_driver/core/utils/common_widget.dart';
@@ -238,7 +238,7 @@ class _ParcelImageScreenState extends State<ParcelImageScreen> {
       child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
         Text("Quick tips".translate(context), style: regular(context).copyWith(color: blackColor, fontWeight: FontWeight.w600)),
         const SizedBox(height: 8),
-        Text("• Good lighting\n• Show labels if any\n• Avoid blur".translate(context),
+        Text("â€¢ Good lighting\nâ€¢ Show labels if any\nâ€¢ Avoid blur".translate(context),
             style: regular(context).copyWith(fontSize: 12, height: 1.5)),
       ]),
     );

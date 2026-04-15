@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+﻿import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
 import '../../../core/utils/common_widget.dart';
@@ -55,7 +55,7 @@ class _SplashScreenState extends State<SplashScreen>
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
                     commonlyUserLogo(),
-                    Text("RideOn Driver",style: heading1(context).copyWith(color: Colors.black,fontSize: 25),)
+                    Text("Piadgo Driver",style: heading1(context).copyWith(color: Colors.black,fontSize: 25),)
                   ],
                 ),
               ),

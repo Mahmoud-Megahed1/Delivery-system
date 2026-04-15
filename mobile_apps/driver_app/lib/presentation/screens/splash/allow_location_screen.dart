@@ -1,4 +1,4 @@
-import 'dart:io';
+﻿import 'dart:io';
 import 'package:bot_toast/bot_toast.dart';
 import 'package:geolocator/geolocator.dart';
 import 'package:permission_handler/permission_handler.dart';
@@ -109,7 +109,7 @@ class _AllowLocationScreenState extends State<AllowLocationScreen> {
 
     final permissionText = Platform.isIOS
         ? "We need your location even when the app isn't open to ensure accurate ride tracking.\n\nWhen prompted by iOS, choose the option that allows location access at all times. This will help your driver find you faster, ensure safety, and improve route accuracy."
-        : "To serve you better, we need:\n\n1. *Location Access* – for real-time tracking even in the background.\n2. *Overlay Permission* – to show ride updates while you use other apps.\n\nThis helps your driver reach you quickly and keeps your trip seamless.";
+        : "To serve you better, we need:\n\n1. *Location Access* â€“ for real-time tracking even in the background.\n2. *Overlay Permission* â€“ to show ride updates while you use other apps.\n\nThis helps your driver reach you quickly and keeps your trip seamless.";
 
     return Scaffold(
       backgroundColor: whiteColor,
@@ -194,7 +194,7 @@ Future<bool> checkAndRequestAlwaysLocationPermission(BuildContext context) async
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Text(
-              "Allowing background location helps us show ride requests near you, even when the app isn’t open. You can choose 'Always' in the next screen if you’d like this feature.".translate(context),
+              "Allowing background location helps us show ride requests near you, even when the app isnâ€™t open. You can choose 'Always' in the next screen if youâ€™d like this feature.".translate(context),
               style: regular2(context),
             ),
             const SizedBox(height: 12),

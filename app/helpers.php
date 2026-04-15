@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 
 use Illuminate\Pagination\LengthAwarePaginator;
 
@@ -92,7 +92,7 @@ if (! function_exists('admin_pagination')) {
         if ($start > 1) {
             $html .= '<li class="page-item"><a class="page-link" href="'.$p->url(1).'">1</a></li>';
             if ($start > 2) {
-                $html .= '<li class="page-item disabled"><span class="page-link">…</span></li>';
+                $html .= '<li class="page-item disabled"><span class="page-link">â€¦</span></li>';
             }
         }
 
@@ -103,7 +103,7 @@ if (! function_exists('admin_pagination')) {
 
         if ($end < $last) {
             if ($end < $last - 1) {
-                $html .= '<li class="page-item disabled"><span class="page-link">…</span></li>';
+                $html .= '<li class="page-item disabled"><span class="page-link">â€¦</span></li>';
             }
             $html .= '<li class="page-item"><a class="page-link" href="'.$p->url($last).'">'.$last.'</a></li>';
         }

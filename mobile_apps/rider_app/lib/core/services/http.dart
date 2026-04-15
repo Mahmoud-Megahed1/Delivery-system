@@ -1,4 +1,4 @@
-import 'dart:async';
+﻿import 'dart:async';
 import 'dart:convert';
 import 'package:ride_on/core/extensions/workspace.dart';
 import 'package:flutter/material.dart' show BuildContext;

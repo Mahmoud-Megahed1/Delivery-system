@@ -1,4 +1,4 @@
-
+﻿
 class GetVendorWalletTransactions {
   GetVendorWalletTransactions({
     num? status,

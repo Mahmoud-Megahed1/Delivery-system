@@ -1,4 +1,4 @@
-import 'dart:async';
+﻿import 'dart:async';
  import 'package:ride_on_driver/core/extensions/workspace.dart';
 import 'package:ride_on_driver/data/repositories/register_vehicle.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
@@ -616,7 +616,7 @@ class GetPaymentAmountCubit extends Cubit<Map<String, String>> {
   }
 }
 /// check ride is exit or not in realtime
-Future<void> checkAndCleanRideOnStartup({
+Future<void> checkAndCleanPiadgoStartup({
   required String driverId,
 }) async {
   try {
@@ -681,7 +681,7 @@ Future<void> checkAndCleanRideOnStartup({
 
         if (diff > howMuchDiff) {
           debugPrint(
-              "Ride $rideId expired ($diff seconds old) — clearing request... not $howMuchDiff");
+              "Ride $rideId expired ($diff seconds old) â€” clearing request... not $howMuchDiff");
           await _clearDriverRideRequest(driverId);
 
           if(rideStatus.isNotEmpty){
@@ -712,7 +712,7 @@ Future<void> checkAndCleanRideOnStartup({
     }
 
   } catch (e) {
-    debugPrint('checkAndCleanRideOnStartup error: $e');
+    debugPrint('checkAndCleanPiadgoStartup error: $e');
   }
 }
 

@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+﻿import 'package:flutter/material.dart';
 import 'package:ride_on_driver/core/utils/translate.dart';
 
 import '../../core/extensions/workspace.dart';

@@ -1,4 +1,4 @@
-import 'package:ride_on/core/extensions/workspace.dart';
+﻿import 'package:ride_on/core/extensions/workspace.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:ride_on/core/utils/theme/theme_style.dart';
@@ -54,7 +54,7 @@ class _SplashScreenState extends State<SplashScreen>
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
                     commonlyUserLogo(),
-                    Text("RideOn Taxi",style: heading1(context).copyWith(color: Colors.black,fontSize: 25),)
+                    Text("Piadgo Taxi",style: heading1(context).copyWith(color: Colors.black,fontSize: 25),)
                   ],
                 ),
               ),

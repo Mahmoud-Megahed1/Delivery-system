@@ -1,4 +1,4 @@
-
+﻿
 <script>
         document.addEventListener('DOMContentLoaded', function () {
             const deleteButtons = document.querySelectorAll('.delete-button');

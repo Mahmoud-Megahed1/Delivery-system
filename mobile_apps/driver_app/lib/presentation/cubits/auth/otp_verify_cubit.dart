@@ -1,4 +1,4 @@
-import 'dart:convert';
+﻿import 'dart:convert';
 import 'package:ride_on_driver/data/repositories/auth_repository.dart';
 
 import 'package:equatable/equatable.dart';

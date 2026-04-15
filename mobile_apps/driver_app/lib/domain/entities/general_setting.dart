@@ -1,4 +1,4 @@
-
+﻿
 class GeneralDataModel {
   int? status;
   String? message;

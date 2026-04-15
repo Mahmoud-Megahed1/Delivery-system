@@ -1,4 +1,4 @@
-import 'dart:async';
+﻿import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/svg.dart';
@@ -159,7 +159,7 @@ class _HomeMainState extends State<HomeMain>
                     final driverIdUpdated =
                         box.get("driverId") ?? loginModel?.data?.fireStoreId ?? "";
 
-                    _startupBarrier = checkAndCleanRideOnStartup(driverId: driverIdUpdated);
+                    _startupBarrier = checkAndCleanPiadgoStartup(driverId: driverIdUpdated);
 
                     await _startupBarrier;
                   }

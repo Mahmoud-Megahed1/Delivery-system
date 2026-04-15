@@ -1,4 +1,4 @@
-import 'dart:async';
+﻿import 'dart:async';
 import 'dart:io';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -21,7 +21,7 @@ class RingtoneHelper with WidgetsBindingObserver {
   }
 
   static const MethodChannel _ringtoneChannel =
-  MethodChannel('com.sizh.rideon.driver.taxiapp/ringtone');
+  MethodChannel('com.sizh.Piadgo.driver.taxiapp/ringtone');
   final AudioPlayer _audioPlayer = AudioPlayer();
   Timer? _autoCloseTimer;
   int _remainingSeconds = 50;

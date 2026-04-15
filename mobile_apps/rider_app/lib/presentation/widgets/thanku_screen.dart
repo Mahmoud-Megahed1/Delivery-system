@@ -1,4 +1,4 @@
-
+﻿
 
 import 'package:flutter/material.dart';
  import 'package:ride_on/app/route_settings.dart';
@@ -193,7 +193,7 @@ class _ThankuScreenState extends State<ThankuScreen> with SingleTickerProviderSt
                     child: Column(
                       children: [
                         Text(
-                          "${"Ride Completed".translate(context)}! 🎉",
+                          "${"Ride Completed".translate(context)}! ðŸŽ‰",
                           style: TextStyle(
                             fontSize: 22,
                             fontWeight: FontWeight.w800,

@@ -1,4 +1,4 @@
-<div id="customLoader" class="loader-container">
+﻿<div id="customLoader" class="loader-container">
                 <div class="custom-loader"></div>
             </div>
            
@@ -13,7 +13,7 @@
                     </div>
                     <div class="col-md-2 text-end">
                         <button type="button" class="close cls-reload f-18" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">×</span>
+                            <span aria-hidden="true">Ã—</span>
                         </button>
                     </div>
                 </div>

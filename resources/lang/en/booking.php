@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 
 return [
     'reservation_code' => 'Reservation Code',

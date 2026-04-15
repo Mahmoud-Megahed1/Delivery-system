@@ -1,4 +1,4 @@
-<ul class="nav nav-tabs" style="display: inline-block;">
+﻿<ul class="nav nav-tabs" style="display: inline-block;">
     @php
         $currentMethod = request()->route('method');
         $methodsToShow = ['paypal', 'stripe', 'cash',]; 

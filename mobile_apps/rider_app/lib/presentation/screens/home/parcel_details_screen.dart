@@ -1,4 +1,4 @@
-// ignore_for_file: void_checks
+﻿// ignore_for_file: void_checks
 
 import 'dart:io';
 import 'package:flutter/material.dart';
@@ -137,7 +137,7 @@ class _ParcelDetailsScreenState extends State<ParcelDetailsScreen> {
         leading: IconButton(
             icon: const Icon(Icons.close),
             onPressed: () => Navigator.pop(context)),
-        title: Text("📦 ${"Parcel Details".translate(context)}",
+        title: Text("ðŸ“¦ ${"Parcel Details".translate(context)}",
             style:
                 heading2Grey1(context).copyWith(fontWeight: FontWeight.bold)),
       ),
@@ -146,14 +146,14 @@ class _ParcelDetailsScreenState extends State<ParcelDetailsScreen> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            _buildTextField("✏️ ${"Parcel Name".translate(context)}", _parcelNameController,
+            _buildTextField("âœï¸ ${"Parcel Name".translate(context)}", _parcelNameController,
                 hint: "e.g., Laptop, Documents, Electronics".translate(context)),
             const SizedBox(height: 15),
             Row(
               children: [
                 Expanded(
                     child: _buildTextField(
-                        "⚖️ ${"Weight (kg)".translate(context)}", _parcelWeightController,
+                        "âš–ï¸ ${"Weight (kg)".translate(context)}", _parcelWeightController,
                         keyboardType: TextInputType.number,
                         suffix: "kg".translate(context),
                         hint: "e.g., 2.5")),
@@ -179,7 +179,7 @@ class _ParcelDetailsScreenState extends State<ParcelDetailsScreen> {
                   children: [
                     Row(children: [
                       const SizedBox(width: 8),
-                      Text("👤 ${"Receiver Details".translate(context)}",
+                      Text("ðŸ‘¤ ${"Receiver Details".translate(context)}",
                           style: heading3Grey1(context)
                               .copyWith(color: Colors.blue))
                     ]),
@@ -263,7 +263,7 @@ class _ParcelDetailsScreenState extends State<ParcelDetailsScreen> {
             ),
             const SizedBox(height: 15),
             _buildTextField(
-                "📍 ${"Pickup Instructions".translate(context)}", _pickupInstructionsController,
+                "ðŸ“ ${"Pickup Instructions".translate(context)}", _pickupInstructionsController,
                 maxLines: 2,
                 prefixIcon: Icons.note_outlined,
                 hint: "e.g., Call before arriving, Leave at door".translate(context)),

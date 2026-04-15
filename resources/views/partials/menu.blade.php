@@ -1,4 +1,4 @@
-<aside class="main-sidebar">
+﻿<aside class="main-sidebar">
     <section class="sidebar" style="height: auto;">
         <ul class="sidebar-menu tree" data-widget="tree">
             <li class="{{ request()->is('admin') ? 'active' : '' }}">

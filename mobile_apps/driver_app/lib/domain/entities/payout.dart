@@ -1,4 +1,4 @@
-
+﻿
 class PayoutModel {
   PayoutModel({
       num? status, 

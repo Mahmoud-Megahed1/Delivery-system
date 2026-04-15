@@ -1,4 +1,4 @@
-import 'dart:async';
+﻿import 'dart:async';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -255,7 +255,7 @@ class _UserSearchLocationState extends State<UserSearchLocation> {
         return Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            // 🚗 Pickup Location
+            // ðŸš— Pickup Location
             customTextField(
               label: "Pickup Location".translate(context),
               controller: cubit.pickupAddressController,
@@ -291,7 +291,7 @@ class _UserSearchLocationState extends State<UserSearchLocation> {
 
             const SizedBox(height: 20),
 
-            // 🏁 Drop Location
+            // ðŸ Drop Location
             customTextField(
               label: "Drop Location".translate(context),
               controller: cubit.dropOffAddressController,
@@ -336,7 +336,7 @@ class _UserSearchLocationState extends State<UserSearchLocation> {
 
             const SizedBox(height: 24),
 
-            // 🌍 Optional: Nearby locations or manual selector
+            // ðŸŒ Optional: Nearby locations or manual selector
             selectWithLocation(context: context),
           ],
         );

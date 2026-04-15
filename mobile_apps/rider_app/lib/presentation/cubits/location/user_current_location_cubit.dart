@@ -1,4 +1,4 @@
-import 'dart:async';
+﻿import 'dart:async';
 import 'dart:convert';
  import 'package:ride_on/domain/entities/catrgory.dart';
 import 'package:equatable/equatable.dart';

@@ -1,4 +1,4 @@
-import 'package:flutter/cupertino.dart';
+﻿import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:cached_network_image/cached_network_image.dart';
@@ -146,7 +146,7 @@ class _VehicleInformationScreenState extends State<VehicleInformationScreen> {
                   style: heading2Grey1(context).copyWith(color: Colors.white),
                 ),
                 Text(
-                  "${itemVehicleModel?.vehicleModel ?? "Unknown"} • ${itemVehicleModel?.vehicleYear ?? ""}",
+                  "${itemVehicleModel?.vehicleModel ?? "Unknown"} â€¢ ${itemVehicleModel?.vehicleYear ?? ""}",
                   style: heading3Grey1(context).copyWith(color: grey5),
                 ),
               ],
@@ -207,7 +207,7 @@ class _VehicleInformationScreenState extends State<VehicleInformationScreen> {
                           style: heading3Grey1(context)
                               .copyWith(color: Colors.white, fontSize: 12),
                           maxLines: 1,
-                          overflow: TextOverflow.ellipsis, // 👈 if name is big
+                          overflow: TextOverflow.ellipsis, // ðŸ‘ˆ if name is big
                         ),
                       ),
                     ),
@@ -250,7 +250,7 @@ class _VehicleInformationScreenState extends State<VehicleInformationScreen> {
                       ),
                     ),
 
-                    // 👇 Overlay text at bottom-left
+                    // ðŸ‘‡ Overlay text at bottom-left
                     Positioned(
                       left: 0,
                       right: 0,

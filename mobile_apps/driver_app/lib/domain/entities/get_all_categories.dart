@@ -1,4 +1,4 @@
-class GetAllCategories {
+﻿class GetAllCategories {
   int? status;
   String? message;
   Data? data;

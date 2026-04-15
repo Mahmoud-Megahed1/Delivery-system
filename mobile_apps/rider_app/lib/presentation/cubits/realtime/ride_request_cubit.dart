@@ -1,4 +1,4 @@
-import 'dart:async';
+﻿import 'dart:async';
 import 'package:ride_on/core/services/data_store.dart';
 import 'package:ride_on/core/extensions/workspace.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';

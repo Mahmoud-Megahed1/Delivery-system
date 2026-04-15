@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
+﻿<?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
@@ -8,7 +8,7 @@
 
 	<key>BGTaskSchedulerPermittedIdentifiers</key>
 	<array>
-		<string>com.sizh.rideon.driverapp.backgroundProcessing</string>
+		<string>com.sizh.Piadgo.driverapp.backgroundProcessing</string>
 	</array>
 
 	<key>CADisableMinimumFrameDurationOnPhone</key>
@@ -73,17 +73,17 @@
 	</dict>
 
 	<key>NSCameraUsageDescription</key>
-	<string>RideOn Driver needs access to your camera to capture and upload pictures of your ID for booking verification or to take photos of items and update your profile.</string>
+	<string>Piadgo Driver needs access to your camera to capture and upload pictures of your ID for booking verification or to take photos of items and update your profile.</string>
 	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
-	<string>RideOn Driver uses your location to find nearby drivers and track your ride even when you're not actively using the app, so we can provide you with real-time updates and ensure a seamless ride experience.</string>
+	<string>Piadgo Driver uses your location to find nearby drivers and track your ride even when you're not actively using the app, so we can provide you with real-time updates and ensure a seamless ride experience.</string>
 	<key>NSLocationAlwaysUsageDescription</key>
-	<string>RideOn Driver needs access to your location even when the app is not in use, for real-time tracking and ride management.</string>
+	<string>Piadgo Driver needs access to your location even when the app is not in use, for real-time tracking and ride management.</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
-	<string>RideOn Driver needs access to your location to find nearby drivers and provide ride options while you're actively using the app.</string>
+	<string>Piadgo Driver needs access to your location to find nearby drivers and provide ride options while you're actively using the app.</string>
 	<key>NSMicrophoneUsageDescription</key>
-	<string>RideOn Driver needs access to your microphone to enable ringtone alerts when you receive a new ride request, ensuring you don't miss important notifications.</string>
+	<string>Piadgo Driver needs access to your microphone to enable ringtone alerts when you receive a new ride request, ensuring you don't miss important notifications.</string>
 	<key>NSPhotoLibraryUsageDescription</key>
-	<string>RideOn Driver requires access to your photo library to upload pictures of your ID or other documents for booking verification, or to add profile and property images.</string>
+	<string>Piadgo Driver requires access to your photo library to upload pictures of your ID or other documents for booking verification, or to add profile and property images.</string>
 
 	<key>UIApplicationSupportsIndirectInputEvents</key>
 	<true/>

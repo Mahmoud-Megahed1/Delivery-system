@@ -1,4 +1,4 @@
-@extends('vendor.layout')
+﻿@extends('vendor.layout')
 @section('styles')
 
 <style>
@@ -163,10 +163,10 @@
    try {
          const firebaseConfig = {
          apiKey: "AIzaSyDJmfSsQoJwx9OCf6t3m-0tcXNT6NilbcI",
-         authDomain: "unibookervehicle.firebaseapp.com",
-         databaseURL: "https://unibookervehicle-default-rtdb.firebaseio.com",
-         projectId: "unibookervehicle",
-         storageBucket: "unibookervehicle.appspot.com",
+         authDomain: "Piadgovehicle.firebaseapp.com",
+         databaseURL: "https://Piadgovehicle-default-rtdb.firebaseio.com",
+         projectId: "Piadgovehicle",
+         storageBucket: "Piadgovehicle.appspot.com",
          messagingSenderId: "951328556833",
          appId: "1:951328556833:web:4a922ffcaa3df4341de060"
          };

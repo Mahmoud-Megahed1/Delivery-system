@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+﻿import 'package:flutter/material.dart';
 import 'package:firebase_database/firebase_database.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:ride_on/core/services/data_store.dart';
@@ -146,7 +146,7 @@ class _RideChatScreenState extends State<RideChatScreen> {
             if (!snapshot.hasData ||
                 snapshot.data!.snapshot.value == null) {
               return const Center(
-                child: Text("Start the conversation 👋"),
+                child: Text("Start the conversation ðŸ‘‹"),
               );
             }
 

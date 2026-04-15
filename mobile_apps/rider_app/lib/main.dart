@@ -1,4 +1,4 @@
-import 'package:ride_on/app/app_localizations.dart';
+﻿import 'package:ride_on/app/app_localizations.dart';
 import 'package:ride_on/app/register_cubits.dart';
 import 'package:ride_on/presentation/cubits/localizations_cubit.dart';
 import 'package:ride_on/presentation/screens/Splash/initial_screen.dart';

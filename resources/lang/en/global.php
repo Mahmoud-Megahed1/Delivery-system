@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 
 // return array();
 return [
@@ -156,7 +156,7 @@ return [
     'manage_settings' => 'Manage Settings',
     'admin' => 'Admin',
     'vendor' => 'Driver',
-    'site_title' => 'RideOn Unibooker',
+    'site_title' => 'Piadgo Piadgo',
     'contactus_title' => 'Contact Us',
     'copy' => 'Copy',
     'csv' => 'CSV',
@@ -296,7 +296,7 @@ return [
     'file_contains_header_row' => 'File contains header row?',
     'first_name' => 'First name',
     'group_by' => 'Group by',
-    'if_you_are_having_trouble' => 'If you’re having trouble clicking the',
+    'if_you_are_having_trouble' => 'If youâ€™re having trouble clicking the',
     'import_data' => 'Import data',
     'imported_rows_to_table' => 'Imported :rows rows to :table table',
     'integer_float_placeholder' => 'Please select one of integer/float fields',

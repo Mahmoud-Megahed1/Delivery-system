@@ -1,4 +1,4 @@
-// ignore: file_names
+﻿// ignore: file_names
 import 'package:ride_on/core/extensions/workspace.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';

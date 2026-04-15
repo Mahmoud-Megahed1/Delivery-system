@@ -1,4 +1,4 @@
-class DashboardModel {
+﻿class DashboardModel {
   int? status;
   String? message;
   DashboardData? data;

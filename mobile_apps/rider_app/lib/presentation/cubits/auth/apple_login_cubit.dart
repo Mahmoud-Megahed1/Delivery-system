@@ -1,4 +1,4 @@
-import 'dart:convert';
+﻿import 'dart:convert';
 
 // ignore: depend_on_referenced_packages
 import 'package:bloc/bloc.dart';

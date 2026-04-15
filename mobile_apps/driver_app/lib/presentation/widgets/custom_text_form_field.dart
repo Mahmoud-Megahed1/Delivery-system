@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+﻿import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:intl_phone_field/countries.dart';
 import 'package:intl_phone_field/country_picker_dialog.dart';
@@ -113,11 +113,11 @@ class _TextFieldAdvanceState extends State<TextFieldAdvance> {
         ),
         hintStyle: widget.hintStyle ?? regular3(context),
 
-        // 🟢 Important part starts here
+        // ðŸŸ¢ Important part starts here
         labelText: widget.txt,
         labelStyle: widget.hintStyle ?? regular3(context), // when unfocused
         floatingLabelStyle: widget.hintStyle?.copyWith(fontSize: 14) ?? regular3(context).copyWith(fontSize: 14,color:blackColor,fontWeight: FontWeight.bold,), // when focused
-        // 🟢 Important part ends here
+        // ðŸŸ¢ Important part ends here
 
         prefixIcon: widget.icons,
         fillColor: notifires.getBoxColor,
@@ -552,11 +552,11 @@ final Map<String, int> phoneLengths = {
   'PR': 10, // Puerto Rico
   'QA': 8, // Qatar
   'CG': 9, // Republic of the Congo
-  'RE': 9, // Réunion
+  'RE': 9, // RÃ©union
   'RO': 10, // Romania
   'RU': 10, // Russia
   'RW': 9, // Rwanda
-  'BL': 9, // Saint Barthélemy
+  'BL': 9, // Saint BarthÃ©lemy
   'SH': 5, // Saint Helena
   'KN': 7, // Saint Kitts and Nevis
   'LC': 7, // Saint Lucia
@@ -565,7 +565,7 @@ final Map<String, int> phoneLengths = {
   'VC': 7, // Saint Vincent and the Grenadines
   'WS': 7, // Samoa
   'SM': 9, // San Marino
-  'ST': 7, // São Tomé and Príncipe
+  'ST': 7, // SÃ£o TomÃ© and PrÃ­ncipe
   'SA': 9, // Saudi Arabia
   'SN': 9, // Senegal
   'RS': 9, // Serbia

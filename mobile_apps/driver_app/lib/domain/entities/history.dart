@@ -1,4 +1,4 @@
-class HistoryModel {
+﻿class HistoryModel {
   int? status;
   String? message;
   Data? data;

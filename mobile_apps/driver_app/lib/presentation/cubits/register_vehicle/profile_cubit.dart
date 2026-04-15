@@ -1,4 +1,4 @@
-import 'dart:convert';
+﻿import 'dart:convert';
 
 import 'package:ride_on_driver/data/repositories/register_vehicle.dart';
 import 'package:equatable/equatable.dart';

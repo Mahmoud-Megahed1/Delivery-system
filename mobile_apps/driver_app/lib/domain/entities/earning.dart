@@ -1,4 +1,4 @@
-class DriverWalletModel {
+﻿class DriverWalletModel {
   int? status;
   String? message;
   WalletData? data;

@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+﻿import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_image_compress/flutter_image_compress.dart';
 import 'package:path/path.dart';
@@ -228,7 +228,7 @@ class _DriverVehicleScreenState extends State<DriverVehicleScreen> {
                       txt: "Vehicle Model".translate(context),
                       hintStyle: regular2(context),
                       inputFormatters: [
-                        UpperCaseTextFormatter(), // 👈 Add this
+                        UpperCaseTextFormatter(), // ðŸ‘ˆ Add this
                       ],
                       textEditingControllerCommon:
                           vehicleCubit.textEditingVehicleModelController,
@@ -251,7 +251,7 @@ class _DriverVehicleScreenState extends State<DriverVehicleScreen> {
                           vehicleCubit.textEditingVehicleNumberController,
                       inputType: TextInputType.text,
                       inputFormatters: [
-                        UpperCaseTextFormatter(), // 👈 Add this
+                        UpperCaseTextFormatter(), // ðŸ‘ˆ Add this
                       ],
                       onChange: (value) {
                         vehicleCubit.updateVehicleNumber(value!);

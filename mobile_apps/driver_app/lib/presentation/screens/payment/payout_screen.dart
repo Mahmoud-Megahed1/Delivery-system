@@ -1,4 +1,4 @@
-import 'dart:io';
+﻿import 'dart:io';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -353,7 +353,7 @@ class _PayoutScreenState extends State<PayoutScreen> {
                                     crossAxisAlignment:
                                         CrossAxisAlignment.start,
                                     children: [
-                                      // 🔹 Status Icon with background
+                                      // ðŸ”¹ Status Icon with background
                                       Container(
                                         height: 50,
                                         width: 50,
@@ -373,21 +373,21 @@ class _PayoutScreenState extends State<PayoutScreen> {
                                       ),
                                       const SizedBox(width: 12),
 
-                                      // 🔹 Transaction Details
+                                      // ðŸ”¹ Transaction Details
                                       Expanded(
                                         child: Column(
                                           crossAxisAlignment:
                                               CrossAxisAlignment.start,
                                           children: [
-                                            // 💰 Amount
+                                            // ðŸ’° Amount
                                             Text(
-                                              '₹${tx.amount}',
+                                              'â‚¹${tx.amount}',
                                               style: heading3Grey1(context)
                                                   .copyWith(fontSize: 15),
                                             ),
                                             const SizedBox(height: 4),
 
-                                            // 🔹 Status Chip
+                                            // ðŸ”¹ Status Chip
                                             Container(
                                               padding:
                                                   const EdgeInsets.symmetric(
@@ -411,7 +411,7 @@ class _PayoutScreenState extends State<PayoutScreen> {
                                             ),
                                             const SizedBox(height: 6),
 
-                                            // 📅 Date + Method
+                                            // ðŸ“… Date + Method
                                             Row(
                                               mainAxisAlignment:
                                                   MainAxisAlignment
@@ -459,7 +459,7 @@ class _PayoutScreenState extends State<PayoutScreen> {
     try {
       final value = double.parse(amount);
       return value > 0 &&
-          value <= maxLimit; // ✅ 0 se bada aur maxLimit se kam/barabar
+          value <= maxLimit; // âœ… 0 se bada aur maxLimit se kam/barabar
     } catch (e) {
       return false;
     }

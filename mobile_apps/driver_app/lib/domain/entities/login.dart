@@ -1,4 +1,4 @@
-class LoginModel {
+﻿class LoginModel {
   LoginModel({
     num? status,
     String? message,

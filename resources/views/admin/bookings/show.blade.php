@@ -1,4 +1,4 @@
-@extends('layouts.admin')
+﻿@extends('layouts.admin')
 @section('content')
     <div class="content">
 
@@ -351,7 +351,7 @@
                                         @if ($rating)
                                             <div class="host-rating mt-1">
                                                 <span class="badge badge-warning">
-                                                    ⭐ {{ number_format($rating, 1) }}/5
+                                                    â­ {{ number_format($rating, 1) }}/5
                                                 </span>
                                             </div>
                                         @else
@@ -410,7 +410,7 @@
                                         @if ($rating)
                                             <div class="host-rating mt-1">
                                                 <span class="badge badge-warning">
-                                                    ⭐ {{ number_format($rating, 1) }}/5
+                                                    â­ {{ number_format($rating, 1) }}/5
                                                 </span>
                                             </div>
                                         @else
