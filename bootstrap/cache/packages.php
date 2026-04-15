@@ -1,4 +1,4 @@
-﻿<?php return array (
+<?php return array (
   'barryvdh/laravel-debugbar' => 
   array (
     'aliases' => 

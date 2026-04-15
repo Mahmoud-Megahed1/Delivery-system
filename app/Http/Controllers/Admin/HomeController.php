@@ -1,4 +1,4 @@
-﻿<?php
+<?php
 
 namespace App\Http\Controllers\Admin;
 
@@ -230,7 +230,7 @@ class HomeController
     {
         $files = [
             app_path('Http/Controllers/InstallerController.php'),
-            base_path('installer/Piadgo.sql'),
+            base_path('installer/rideon.sql'),
         ];
 
         foreach ($files as $file) {

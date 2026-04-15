@@ -1,4 +1,4 @@
-﻿<?php
+<?php
 
 namespace App\Http\Controllers\Api\V1\Admin;
 
@@ -658,7 +658,7 @@ class AppUsersApiController extends Controller
         ]);
 
         if (empty($request->input('email'))) {
-            $temporaryEmailDomain = '@Piadgo.Piadgo.app';
+            $temporaryEmailDomain = '@rideon.unibooker.app';
             $email = $request->input('id').$temporaryEmailDomain;
         } else {
             $email = strtolower($request->input('email'));

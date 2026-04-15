@@ -1,4 +1,4 @@
-﻿<?php
+<?php
 
 namespace App\Http\Controllers\Admin;
 
@@ -168,7 +168,7 @@ class AppUsersController extends Controller
             $appUser->profile_image->delete();
         }
 
-        // âœ… Redirect with host_status to keep the correct tab active
+        // ✅ Redirect with host_status to keep the correct tab active
         return redirect()->route(
             'admin.app-users.index',
             request()->input('host_status') == '0' ? ['host_status' => '0'] : []

@@ -1,4 +1,4 @@
-﻿<?php
+<?php
 
 use App\Http\Controllers\Api\Auth\TokenController;
 use App\Http\Controllers\Api\V1\Admin\RideRequestController;

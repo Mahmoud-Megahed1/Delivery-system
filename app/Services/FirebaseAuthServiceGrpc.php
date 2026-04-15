@@ -1,4 +1,4 @@
-﻿<?php
+<?php
 
 namespace App\Services;
 
@@ -15,9 +15,9 @@ class FirebaseAuthService
         ), true);
 
         $this->db = new FirestoreClient([
-            'keyFile' => $keyFile, // ðŸ‘ˆ load directly, avoids recursion
+            'keyFile' => $keyFile, // 👈 load directly, avoids recursion
             'projectId' => 'dummy-b0665',
-            'transport' => 'rest',               // ðŸ‘ˆ safer than gRPC for PHP 8.3
+            'transport' => 'rest',               // 👈 safer than gRPC for PHP 8.3
             'apiEndpoint' => 'firestore.googleapis.com',
         ]);
     }
