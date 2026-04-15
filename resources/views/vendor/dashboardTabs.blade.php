@@ -1,4 +1,4 @@
-﻿<ul class="cus nav nav-tabs f-14" role="tablist">
+<ul class="cus nav nav-tabs f-14" role="tablist">
         <li class="{{ request()->routeIs('admin.overview') ? 'active' : '' }}">
         <a href="{{ route('admin.overview', $vendorId) }}">{{ trans('global.adminOverView') }}</a>
         </li>

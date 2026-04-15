@@ -1,4 +1,4 @@
-﻿@extends('layouts.admin')
+@extends('layouts.admin')
 @section('content')
     <div class="content">
         <div class="row">
@@ -34,7 +34,7 @@
                                 @endif
                             </div>
 
-                            {{-- Amount with walletâ€balance hint --}}
+                            {{-- Amount with wallet‐balance hint --}}
                             <div class="form-group {{ $errors->has('amount') ? 'has-error' : '' }}">
                                 <label class="required" for="amount">{{ trans('global.amount') }}</label>
                                 <input class="form-control" type="number" name="amount" id="amount"

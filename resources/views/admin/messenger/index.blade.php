@@ -1,4 +1,4 @@
-﻿@extends('admin.messenger.template')
+@extends('admin.messenger.template')
 
 @section('title', $title)
 

@@ -1,4 +1,4 @@
-﻿@section('styles')
+@section('styles')
 <style>
     .d-flex {
         display: flex;

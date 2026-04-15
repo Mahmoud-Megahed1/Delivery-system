@@ -1,4 +1,4 @@
-﻿<ul class="cus nav nav-tabs f-14" role="tablist">
+<ul class="cus nav nav-tabs f-14" role="tablist">
     @php
         $hostStatus = request()->input('host_status');
     @endphp

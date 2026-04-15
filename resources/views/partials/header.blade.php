@@ -1,4 +1,4 @@
-﻿   <header class="main-header cvvv">
+   <header class="main-header cvvv">
             <a href="/admin/" class="logo">
                 <span class="logo-mini">
                     @if (isset($logoPath) && !empty($logoPath) && file_exists(public_path($logoPath)))

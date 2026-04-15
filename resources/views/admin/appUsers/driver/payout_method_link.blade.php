@@ -1,4 +1,4 @@
-﻿@php
+@php
     $paymentMethods = [
         'stripe' => 'Stripe',
         'paypal' => 'Paypal',

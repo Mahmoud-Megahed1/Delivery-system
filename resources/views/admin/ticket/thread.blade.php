@@ -1,4 +1,4 @@
-﻿@extends('layouts.admin')
+@extends('layouts.admin')
 @section('content')
 <div class="content"><div style="margin-bottom: 10px;" class="row">
     <div class="col-lg-2">  {{ trans('global.tickets_title') }} :</div>

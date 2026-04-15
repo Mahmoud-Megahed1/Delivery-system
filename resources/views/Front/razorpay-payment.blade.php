@@ -1,4 +1,4 @@
-﻿<html>
+<html>
 <head>
     <title>Razorpay Payment Page</title>
     <script src="https://checkout.razorpay.com/v1/checkout.js"></script>

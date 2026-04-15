@@ -1,4 +1,4 @@
-﻿<div style="margin-left: 5px;" class="row">
+<div style="margin-left: 5px;" class="row">
     <div class="col-lg-12">
 
         <a class="{{ !request()->has('status') || request()->query('status') === '' ? 'btn btn-primary' : 'btn btn-inactive' }}"

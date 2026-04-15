@@ -1,4 +1,4 @@
-﻿<script>
+<script>
     $(document).ready(function() {
         $('.smssettingform').submit(function(event) {
             event.preventDefault();

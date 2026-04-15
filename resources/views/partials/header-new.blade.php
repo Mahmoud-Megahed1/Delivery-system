@@ -1,9 +1,9 @@
-﻿    <header class="main-header cvvv">
+    <header class="main-header cvvv">
         <a href="/admin/" class="logo">
             <span class="logo-mini">
                 @if (isset($logoPath) && !empty($logoPath) && file_exists(public_path($logoPath)))
                 <img src="{{ $logoPath }}" alt="{{ $siteName ?? trans('global.site_title') }}" />
-                <span> Piadgo </span>
+                <span> Ridon </span>
                 @else
                 <b>{{ $siteName ?? trans('global.site_title') }}</b>
                 @endif
@@ -11,7 +11,7 @@
             <span class="logo-lg">
                 @if (isset($logoPath) && !empty($logoPath) && file_exists(public_path($logoPath)))
                 <img src="{{ $logoPath }}" alt="{{ $siteName ?? trans('global.site_title') }}" />
-                <span>Piadgo</span>
+                <span>Ridon</span>
                 @else
                 {{ $siteName ?? trans('global.site_title') }}
                 @endif
@@ -101,7 +101,7 @@
                         </li>
 
                         <li>
-                            <a href="https://welcome-Piadgo.Piadgo/" target="_blank" class="icon-circle" title="Visit Landing Page">
+                            <a href="https://welcome-rideon.unibooker.app/" target="_blank" class="icon-circle" title="Visit Landing Page">
                                 <i class="fa fa-globe"></i>
                             </a>
                         </li>

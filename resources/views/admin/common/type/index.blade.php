@@ -1,4 +1,4 @@
-﻿@extends('layouts.admin')
+@extends('layouts.admin')
 @section('styles')
     <style>
         .dataTables_info {
@@ -116,7 +116,7 @@
                                             @if ($isDelivery && $itemType->max_weight)
                                                 {{ $itemType->max_weight }} KG
                                             @else
-                                                â€”
+                                                —
                                             @endif
                                         </td>
 

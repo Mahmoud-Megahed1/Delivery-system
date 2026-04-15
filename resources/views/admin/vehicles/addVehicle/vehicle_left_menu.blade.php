@@ -1,4 +1,4 @@
-﻿
+
 <div class="col-md-3 settings_bar_gap">
  <div class="box box-info box_info">
                 <div>

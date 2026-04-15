@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html>
 
 <head>
@@ -58,7 +58,7 @@
                 <span class="logo-mini">
                     @if (isset($logoPath) && !empty($logoPath) && file_exists(public_path($logoPath)))
                         <img src="{{ $logoPath }}" alt="{{ $siteName ?? trans('global.site_title') }}" />
-                       <span> Piadgo </span>
+                       <span> Ridon </span>
                     @else
                         <b>{{ $siteName ?? trans('global.site_title') }}</b>
                     @endif
@@ -66,7 +66,7 @@
                 <span class="logo-lg">
                     @if (isset($logoPath) && !empty($logoPath) && file_exists(public_path($logoPath)))
                         <img src="{{ $logoPath }}" alt="{{ $siteName ?? trans('global.site_title') }}" />
-                        <span>Piadgo</span>
+                        <span>Ridon</span>
                     @else
                         {{ $siteName ?? trans('global.site_title') }}
                     @endif
@@ -395,14 +395,14 @@
         
         
         <div class="pull-left greeting-text">
-    <h3>Hello, Administrator ðŸ‘‹</h3>
+    <h3>Hello, Administrator 👋</h3>
     <!-- The Sliding Container -->
     <div class="sliding-paragraph-box">
         <div class="sliding-inner">
-            <p>ðŸŒˆ Letâ€™s make today productive and successful! ðŸ†</p>
-            <p>ðŸ§  Letâ€™s brainstorm and create something awesome! ðŸ’¡</p>
+            <p>🌈 Let’s make today productive and successful! 🏆</p>
+            <p>🧠 Let’s brainstorm and create something awesome! 💡</p>
             <!-- Loop the first one for a seamless transition -->
-            <p>ðŸŒˆ Letâ€™s make today productive and successful! ðŸ†</p>
+            <p>🌈 Let’s make today productive and successful! 🏆</p>
         </div>
     </div>
 </div>
@@ -466,7 +466,7 @@
             <strong>{{ $siteName }} &copy;</strong>
             {{ trans('global.allRightsReserved') }}
             Powered by
-            <a href="https://Piadgo.app/" target="_blank">Piadgo.app</a>
+            <a href="https://unibooker.app/" target="_blank">UniBooker.app</a>
             |
             Load time: {{ number_format(microtime(true) - LARAVEL_START, 2) }}s
         </footer>

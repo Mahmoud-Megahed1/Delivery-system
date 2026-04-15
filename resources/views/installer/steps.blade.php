@@ -1,4 +1,4 @@
-﻿<div class="step-item {{ request()->is('install/welcome') ? 'active' : '' }}">
+<div class="step-item {{ request()->is('install/welcome') ? 'active' : '' }}">
     <div class="step-icon">1</div>
     <div class="step-title">Welcome</div>
 </div>

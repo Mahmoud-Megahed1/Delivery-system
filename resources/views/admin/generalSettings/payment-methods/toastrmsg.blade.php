@@ -1,4 +1,4 @@
-﻿<script>
+<script>
     $(document).ready(function() {
         $('#onlinepayment').change(function() {
             var $this = $(this);

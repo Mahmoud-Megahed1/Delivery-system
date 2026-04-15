@@ -1,4 +1,4 @@
-﻿@section('scripts')
+@section('scripts')
 @parent
 <script>
 $(function () {
