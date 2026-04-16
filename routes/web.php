@@ -21,6 +21,8 @@ Route::post('admin/clear-cache', function () {
     return redirect()->back()->with('success', 'Cache cleared successfully.');
 })->name('admin.clear.cache');
 
+Route::get('admin/repair-permissions', 'App\Http\Controllers\InstallerController@repairPermissions')->name('admin.repair.permissions');
+
 Route::get('/payment/return', 'App\Http\Controllers\Front\PaymentFrontController@handleReturn')->name('handleReturn');
 Route::match(['get', 'post', 'put'], '/payment/callback', 'App\Http\Controllers\Front\PaymentFrontController@handleCallback')
     ->name('handleCallback');

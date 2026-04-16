@@ -329,4 +329,27 @@ class InstallerController extends Controller
             return false;
         }
     }
+
+    /**
+     * Recovery tool to sync all permissions to the Super Admin role (ID: 1).
+     * Usage: Can be called via a temporary manual route if permissions logic breaks.
+     */
+    public function repairPermissions()
+    {
+        try {
+            $roleId = 1; // Super Admin Role ID
+            $permissions = \App\Models\Permission::all();
+            $role = \App\Models\Role::find($roleId);
+
+            if ($role) {
+                $role->permissions()->sync($permissions->pluck('id'));
+
+                return response()->json(['success' => true, 'message' => 'Permissions synced successfully']);
+            }
+
+            return response()->json(['error' => 'Admin role not found'], 404);
+        } catch (\Exception $e) {
+            return response()->json(['error' => $e->getMessage()], 500);
+        }
+    }
 }

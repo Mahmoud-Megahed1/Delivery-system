@@ -47,7 +47,7 @@ function formatCurrency($number, $decimals = 2, $decimal_separator = '.', $thous
 
     if ($forDb) {
         // Return raw numeric value for DB usage, ensuring it's still rounded consistently
-        return number_format((float) $number, $decimals);
+        return number_format((float) ($number ?? 0), $decimals, '.', '');
     }
 
     $locale = Config::get('general.default_locale_currency') ?? 'en-US';
@@ -56,10 +56,10 @@ function formatCurrency($number, $decimals = 2, $decimal_separator = '.', $thous
         $formatter = new NumberFormatter($locale, NumberFormatter::DECIMAL);
         $formatter->setAttribute(NumberFormatter::FRACTION_DIGITS, $decimals);
 
-        return $formatter->format($number);
+        return $formatter->format((float) $number);
     }
 
-    return number_format($number, $decimals, $decimal_separator, $thousands_separator);
+    return number_format((float) $number, $decimals, $decimal_separator, $thousands_separator);
 }
 function formatCurrencyForDb($number, $forDb = false)
 {
@@ -92,7 +92,7 @@ if (! function_exists('admin_pagination')) {
         if ($start > 1) {
             $html .= '<li class="page-item"><a class="page-link" href="'.$p->url(1).'">1</a></li>';
             if ($start > 2) {
-                $html .= '<li class="page-item disabled"><span class="page-link">…</span></li>';
+                $html .= '<li class="page-item disabled"><span class="page-link">â€¦</span></li>';
             }
         }
 
@@ -103,7 +103,7 @@ if (! function_exists('admin_pagination')) {
 
         if ($end < $last) {
             if ($end < $last - 1) {
-                $html .= '<li class="page-item disabled"><span class="page-link">…</span></li>';
+                $html .= '<li class="page-item disabled"><span class="page-link">â€¦</span></li>';
             }
             $html .= '<li class="page-item"><a class="page-link" href="'.$p->url($last).'">'.$last.'</a></li>';
         }

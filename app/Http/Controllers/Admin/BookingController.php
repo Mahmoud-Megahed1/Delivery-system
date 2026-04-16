@@ -277,12 +277,12 @@ class BookingController extends Controller
         $user = AppUser::where('id', $booking)->first();
         $general_default_currency = GeneralSetting::where('meta_key', 'general_default_currency')->first();
 
-        $hostspendmoney = number_format($this->getVendorWalletBalance($booking), 2);
-        $hostpendingmoney = number_format($this->getTotalWithdrawlForVendor($booking, 'Pending'), 2);
-        $hostrecivemoney = number_format($this->getTotalWithdrawlForVendor($booking, 'Success'), 2);
+        $hostspendmoney = number_format($this->getVendorWalletBalance($booking) ?? 0, 2);
+        $hostpendingmoney = number_format($this->getTotalWithdrawlForVendor($booking, 'Pending') ?? 0, 2);
+        $hostrecivemoney = number_format($this->getTotalWithdrawlForVendor($booking, 'Success') ?? 0, 2);
 
-        $totalmoney = number_format($this->getTotalEarningsForVendor($booking), 2);
-        $refunded = number_format($this->getTotalRefundForVendor($booking, ''), 2);
+        $totalmoney = number_format($this->getTotalEarningsForVendor($booking) ?? 0, 2);
+        $refunded = number_format($this->getTotalRefundForVendor($booking, '') ?? 0, 2);
 
         return view('admin.overviewcustomer.index', compact('booking', 'user', 'hostspendmoney', 'hostpendingmoney', 'hostrecivemoney', 'totalmoney', 'refunded', 'vendor_wallets', 'general_default_currency'));
     }

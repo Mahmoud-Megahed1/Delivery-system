@@ -157,10 +157,10 @@ class AppDriverController extends Controller
         $userType = $request->query('user_type');
         $appUser = AppUser::select('id', 'first_name', 'last_name')->where('id', $userId)->firstOrFail();
         $general_default_currency = GeneralSetting::where('meta_key', 'general_default_currency')->first();
-        $hostspendmoney = number_format($this->getVendorWalletBalance($userId), 2);
-        $hostpendingmoney = number_format($this->getTotalWithdrawlForVendor($userId, 'Pending'), 2);
-        $hostrecivemoney = number_format($this->getTotalWithdrawlForVendor($userId, 'Success'), 2);
-        $totalmoney = number_format($this->getTotalEarningsForVendor($userId), 2);
+        $hostspendmoney = number_format($this->getVendorWalletBalance($userId) ?? 0, 2);
+        $hostpendingmoney = number_format($this->getTotalWithdrawlForVendor($userId, 'Pending') ?? 0, 2);
+        $hostrecivemoney = number_format($this->getTotalWithdrawlForVendor($userId, 'Success') ?? 0, 2);
+        $totalmoney = number_format($this->getTotalEarningsForVendor($userId) ?? 0, 2);
         $refunded = number_format($this->getTotalRefundForVendor($userId, ''), 2);
 
         return view('admin.appUsers.driver.finance', compact('userId', 'hostspendmoney', 'hostpendingmoney', 'hostrecivemoney', 'totalmoney', 'refunded', 'vendor_wallets', 'general_default_currency', 'appUser'));
