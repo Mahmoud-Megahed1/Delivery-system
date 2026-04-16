@@ -315,7 +315,7 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.', 'namespace' => 'Admin', 'mi
     Route::resource('all-packages', 'AllPackagesController', ['except' => ['destroy']]);
 
     // General Setting
-    Route::controller(\App\Http\Controllers\Admin\GeneralSettingController::class)->group(function () {
+    Route::controller(GeneralSettingController::class)->group(function () {
 
         // General settings & project setup
         Route::get('general-settings', 'generalForm')->name('settings');

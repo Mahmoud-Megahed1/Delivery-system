@@ -161,7 +161,7 @@ class AppDriverController extends Controller
         $hostpendingmoney = number_format($this->getTotalWithdrawlForVendor($userId, 'Pending') ?? 0, 2);
         $hostrecivemoney = number_format($this->getTotalWithdrawlForVendor($userId, 'Success') ?? 0, 2);
         $totalmoney = number_format($this->getTotalEarningsForVendor($userId) ?? 0, 2);
-        $refunded = number_format($this->getTotalRefundForVendor($userId, ''), 2);
+        $refunded = number_format($this->getTotalRefundForVendor($userId) ?? 0, 2);
 
         return view('admin.appUsers.driver.finance', compact('userId', 'hostspendmoney', 'hostpendingmoney', 'hostrecivemoney', 'totalmoney', 'refunded', 'vendor_wallets', 'general_default_currency', 'appUser'));
     }
@@ -271,7 +271,7 @@ class AppDriverController extends Controller
             $firestoreDoc = $this->storeDriverInFirestore($firestoreData);
             $firestoreDocId = $firestoreDoc->id();
             $user->update(['firestore_id' => $firestoreDocId]);
-            $user['firestore_id'] = $firestoreDocId;
+            $user->firestore_id = $firestoreDocId;
         }
         $user->update(['host_status' => $verified ? 1 : 0]);
         $this->updateDocument('drivers', $user->firestore_id, [

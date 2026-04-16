@@ -27,6 +27,8 @@ use App\Models\VendorWallet;
 use App\Models\Wallet;
 use Gate;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Artisan;
+use Illuminate\Support\Facades\View;
 use Symfony\Component\HttpFoundation\Response;
 
 class BookingController extends Controller
@@ -282,7 +284,7 @@ class BookingController extends Controller
         $hostrecivemoney = number_format($this->getTotalWithdrawlForVendor($booking, 'Success') ?? 0, 2);
 
         $totalmoney = number_format($this->getTotalEarningsForVendor($booking) ?? 0, 2);
-        $refunded = number_format($this->getTotalRefundForVendor($booking, '') ?? 0, 2);
+        $refunded = number_format($this->getTotalRefundForVendor($booking) ?? 0, 2);
 
         return view('admin.overviewcustomer.index', compact('booking', 'user', 'hostspendmoney', 'hostpendingmoney', 'hostrecivemoney', 'totalmoney', 'refunded', 'vendor_wallets', 'general_default_currency'));
     }
