@@ -35,21 +35,55 @@ class BookingController extends Controller
 {
     use EmailTrait, MediaUploadingTrait, NotificationTrait, PushNotificationTrait, ResponseTrait, SMSTrait, UserWalletTrait, VendorWalletTrait;
 
+    /**
+     * Display a listing of the bookings.
+     *
+     * @return \Illuminate\View\View
+     */
     public function index()
     {
         abort_if(Gate::denies('booking_access'), Response::HTTP_FORBIDDEN, '403 Forbidden');
 
-        $from = request()->input('from');
-        $to = request()->input('to');
-        $item = request()->input('item');
-        $host = request()->input('host');
-        $customer = request()->input('customer');
-        $status = request()->input('status');
-        $serviceType = request()->input('service_type');
+        $filters = $this->getIndexFilters();
+        $query = $this->buildIndexQuery($filters);
+        $statusCounts = $this->buildStatusCounts($filters);
 
-        $isTrash = \Route::currentRouteName() === 'admin.bookings.trash';
+        $bookings = $query->orderBy('id', 'desc')->paginate(50);
+        $bookings->appends(array_filter($filters));
 
-        // Base query for listing
+        $viewData = $this->buildIndexViewData($filters);
+        $viewData['bookings'] = $bookings;
+        $viewData['statusCounts'] = $statusCounts;
+
+        return view('admin.bookings.index', $viewData);
+    }
+
+    /**
+     * Get filter parameters from the request.
+     *
+     * @return array
+     */
+    private function getIndexFilters()
+    {
+        return [
+            'from' => request()->input('from'),
+            'to' => request()->input('to'),
+            'item' => request()->input('item'),
+            'host' => request()->input('host'),
+            'customer' => request()->input('customer'),
+            'status' => request()->input('status'),
+            'service_type' => request()->input('service_type'),
+        ];
+    }
+
+    /**
+     * Build the main booking query with filters applied.
+     *
+     * @param array $filters
+     * @return \Illuminate\Database\Eloquent\Builder
+     */
+    private function buildIndexQuery(array $filters)
+    {
         $query = Booking::with([
             'host:id,first_name,last_name,phone,phone_country',
             'user:id,first_name,last_name,phone,phone_country',
@@ -62,62 +96,46 @@ class BookingController extends Controller
             'user.media',
         ]);
 
+        $isTrash = \Route::currentRouteName() === 'admin.bookings.trash';
         if ($isTrash) {
-            $query->onlyTrashed(); // Show only trashed bookings in listing
+            $query->onlyTrashed();
         }
 
-        if ($from && $to) {
-            $query->whereBetween('created_at', [$from.' 00:00:00', $to.' 23:59:59']);
-        } elseif ($from) {
-            $query->where('created_at', '>=', $from.' 00:00:00');
-        } elseif ($to) {
-            $query->where('created_at', '<=', $to.' 23:59:59');
-        }
-
-        if ($host) {
-            $query->where('host_id', $host);
-        }
-        if ($customer) {
-            $query->where('userid', $customer);
-        }
-        if ($item) {
-            $query->where('itemid', $item);
-        }
+        $this->applyDateFilter($query, $filters, 'created_at');
+        $this->applyCommonFilters($query, $filters);
 
         $validStatuses = ['pending', 'confirmed', 'ongoing', 'cancelled', 'declined', 'completed', 'refunded', 'accepted', 'rejected'];
-        if ($status && in_array($status, $validStatuses)) {
-            $query->where('status', $status);
+        if ($filters['status'] && in_array($filters['status'], $validStatuses)) {
+            $query->where('status', $filters['status']);
         }
-        if ($serviceType) {
-            $query->whereHas('extension', function ($q) use ($serviceType) {
-                $q->where('service_type_id', $serviceType);
+
+        if ($filters['service_type']) {
+            $query->whereHas('extension', function ($q) use ($filters) {
+                $q->where('service_type_id', $filters['service_type']);
             });
         }
+
+        return $query;
+    }
+
+    /**
+     * Build status counts for the index view.
+     *
+     * @param array $filters
+     * @return array
+     */
+    private function buildStatusCounts(array $filters)
+    {
         $countsQuery = Booking::query();
 
-        if ($serviceType) {
-            $countsQuery->whereHas('extension', function ($q) use ($serviceType) {
-                $q->where('service_type_id', $serviceType);
+        if ($filters['service_type']) {
+            $countsQuery->whereHas('extension', function ($q) use ($filters) {
+                $q->where('service_type_id', $filters['service_type']);
             });
         }
 
-        if ($from && $to) {
-            $countsQuery->whereBetween('created_at', [$from.' 00:00:00', $to.' 23:59:59']);
-        } elseif ($from) {
-            $countsQuery->where('created_at', '>=', $from.' 00:00:00');
-        } elseif ($to) {
-            $countsQuery->where('created_at', '<=', $to.' 23:59:59');
-        }
-
-        if ($host) {
-            $countsQuery->where('host_id', $host);
-        }
-        if ($customer) {
-            $countsQuery->where('userid', $customer);
-        }
-        if ($item) {
-            $countsQuery->where('itemid', $item);
-        }
+        $this->applyDateFilter($countsQuery, $filters, 'created_at');
+        $this->applyCommonFilters($countsQuery, $filters);
 
         $statusCountsRaw = (clone $countsQuery)
             ->selectRaw('status, COUNT(*) as count')
@@ -125,7 +143,9 @@ class BookingController extends Controller
             ->pluck('count', 'status')
             ->toArray();
 
-        $statusCounts = [
+        $serviceType = $filters['service_type'];
+
+        return [
             'all' => array_sum($statusCountsRaw),
             'ongoing' => $statusCountsRaw['Ongoing'] ?? 0,
             'pending' => $statusCountsRaw['Pending'] ?? 0,
@@ -144,50 +164,78 @@ class BookingController extends Controller
                 })
                 ->count(),
         ];
+    }
 
-        $query = $query->orderBy('id', 'desc');
-        $bookings = $query->paginate(50);
+    /**
+     * Build view data (search fields, currency, service types) for index.
+     *
+     * @param array $filters
+     * @return array
+     */
+    private function buildIndexViewData(array $filters)
+    {
+        $host = $filters['host'];
+        $customer = $filters['customer'];
+        $item = $filters['item'];
+        $serviceType = $filters['service_type'];
 
-        $queryParameters = array_filter([
-            'status' => $status,
-            'to' => $to,
-            'from' => $from,
-            'host' => $host,
-            'customer' => $customer,
-            'item' => $item,
-            'service_type' => $serviceType,
-        ]);
-        $bookings->appends($queryParameters);
+        $hostData = $host ? cache()->remember("host_{$host}", now()->addHours(24), fn() => AppUser::find($host)) : null;
+        $customerData = $customer ? cache()->remember("customer_{$customer}", now()->addHours(24), fn() => AppUser::find($customer)) : null;
+        $itemData = $item ? cache()->remember("item_{$item}", now()->addHours(24), fn() => Item::find($item)) : null;
 
-        $hostData = $host ? cache()->remember("host_{$host}", now()->addHours(24), fn () => AppUser::find($host)) : null;
-        $searchfield = $hostData ? $hostData->first_name : 'All';
-        $searchfieldId = $hostData ? $hostData->id : '';
+        return [
+            'searchfield' => $hostData ? $hostData->first_name : 'All',
+            'searchfieldId' => $hostData ? $hostData->id : '',
+            'searchCustomer' => $customerData ? $customerData->first_name : 'All',
+            'searchCustomerId' => $customerData ? $customerData->id : '',
+            'searchfieldItem' => $itemData ? $itemData->title : 'All',
+            'searchfieldItemId' => $itemData ? $itemData->id : '',
+            'general_default_currency' => cache()->remember('general_default_currency', now()->addHours(24), fn() => View::shared('general_default_currency')),
+            'serviceTypes' => RentalItemServiceType::where('status', 1)->get(),
+            'serviceType' => $serviceType,
+        ];
+    }
 
-        $customerData = $customer ? cache()->remember("customer_{$customer}", now()->addHours(24), fn () => AppUser::find($customer)) : null;
-        $searchCustomer = $customerData ? $customerData->first_name : 'All';
-        $searchCustomerId = $customerData ? $customerData->id : '';
+    /**
+     * Apply date range filter to a query.
+     *
+     * @param \Illuminate\Database\Eloquent\Builder $query
+     * @param array $filters
+     * @param string $column
+     * @return void
+     */
+    private function applyDateFilter($query, array $filters, string $column)
+    {
+        $from = $filters['from'];
+        $to = $filters['to'];
 
-        $itemData = $item ? cache()->remember("item_{$item}", now()->addHours(24), fn () => Item::find($item)) : null;
-        $searchfieldItem = $itemData ? $itemData->title : 'All';
-        $searchfieldItemId = $itemData ? $itemData->id : '';
+        if ($from && $to) {
+            $query->whereBetween($column, [$from . ' 00:00:00', $to . ' 23:59:59']);
+        } elseif ($from) {
+            $query->where($column, '>=', $from . ' 00:00:00');
+        } elseif ($to) {
+            $query->where($column, '<=', $to . ' 23:59:59');
+        }
+    }
 
-        $general_default_currency = cache()->remember('general_default_currency', now()->addHours(24), fn () => View::shared('general_default_currency'));
-        $serviceTypes = RentalItemServiceType::where('status', 1)->get();
-
-        return view('admin.bookings.index', compact(
-            'bookings',
-
-            'searchCustomer',
-            'searchCustomerId',
-            'statusCounts',
-            'searchfieldItem',
-            'searchfieldItemId',
-            'searchfield',
-            'searchfieldId',
-            'general_default_currency',
-            'serviceTypes',
-            'serviceType'
-        ));
+    /**
+     * Apply host, customer, item filters to a query.
+     *
+     * @param \Illuminate\Database\Eloquent\Builder $query
+     * @param array $filters
+     * @return void
+     */
+    private function applyCommonFilters($query, array $filters)
+    {
+        if ($filters['host']) {
+            $query->where('host_id', $filters['host']);
+        }
+        if ($filters['customer']) {
+            $query->where('userid', $filters['customer']);
+        }
+        if ($filters['item']) {
+            $query->where('itemid', $filters['item']);
+        }
     }
 
     public function create()
@@ -245,7 +293,7 @@ class BookingController extends Controller
 
         $items = Item::with('appUser')
             ->whereHas('appUser', function ($query) use ($customerName) {
-                $query->where('first_name', 'like', '%'.$customerName.'%');
+                $query->where('first_name', 'like', '%' . $customerName . '%');
             })
             ->distinct()
             ->get();
@@ -343,11 +391,11 @@ class BookingController extends Controller
             ->orderBy('check_in', 'asc');
 
         if ($from && $to) {
-            $query->whereBetween('check_in', [$from.' 00:00:00', $to.' 23:59:59']);
+            $query->whereBetween('check_in', [$from . ' 00:00:00', $to . ' 23:59:59']);
         } elseif ($from) {
-            $query->where('check_out', '>=', $from.' 00:00:00');
+            $query->where('check_out', '>=', $from . ' 00:00:00');
         } elseif ($to) {
-            $query->where('check_out', '<=', $to.' 23:59:59');
+            $query->where('check_out', '<=', $to . ' 23:59:59');
         }
 
         if ($status !== null) {
@@ -398,11 +446,11 @@ class BookingController extends Controller
             ->where('payment_status', 'paid');
         // Apply filters
         if ($from && $to) {
-            $query->whereBetween('updated_at', [$from.' 00:00:00', $to.' 23:59:59']);
+            $query->whereBetween('updated_at', [$from . ' 00:00:00', $to . ' 23:59:59']);
         } elseif ($from) {
-            $query->where('updated_at', '>=', $from.' 00:00:00');
+            $query->where('updated_at', '>=', $from . ' 00:00:00');
         } elseif ($to) {
-            $query->where('updated_at', '<=', $to.' 23:59:59');
+            $query->where('updated_at', '<=', $to . ' 23:59:59');
         }
 
         if ($status == 'pending') {
@@ -476,18 +524,18 @@ class BookingController extends Controller
         $isFiltered = ($from || $to || $status);
         if ($from && $to) {
             $query->where(function ($query) use ($from, $to) {
-                $query->whereBetween('payouts.created_at', [$from.' 00:00:00', $to.' 23:59:59'])
-                    ->orWhereBetween('payouts.updated_at', [$from.' 00:00:00', $to.' 23:59:59']);
+                $query->whereBetween('payouts.created_at', [$from . ' 00:00:00', $to . ' 23:59:59'])
+                    ->orWhereBetween('payouts.updated_at', [$from . ' 00:00:00', $to . ' 23:59:59']);
             });
         } elseif ($from) {
             $query->where(function ($query) use ($from) {
-                $query->where('payouts.created_at', '>=', $from.' 00:00:00')
-                    ->orWhere('payouts.updated_at', '>=', $from.' 00:00:00');
+                $query->where('payouts.created_at', '>=', $from . ' 00:00:00')
+                    ->orWhere('payouts.updated_at', '>=', $from . ' 00:00:00');
             });
         } elseif ($to) {
             $query->where(function ($query) use ($to) {
-                $query->where('payouts.created_at', '<=', $to.' 23:59:59')
-                    ->orWhere('payouts.updated_at', '<=', $to.' 23:59:59');
+                $query->where('payouts.created_at', '<=', $to . ' 23:59:59')
+                    ->orWhere('payouts.updated_at', '<=', $to . ' 23:59:59');
             });
         }
 
@@ -527,18 +575,18 @@ class BookingController extends Controller
         $isFiltered = ($from || $to || $status);
         if ($from && $to) {
             $query->where(function ($query) use ($from, $to) {
-                $query->whereBetween('wallets.created_at', [$from.' 00:00:00', $to.' 23:59:59'])
-                    ->orWhereBetween('wallets.updated_at', [$from.' 00:00:00', $to.' 23:59:59']);
+                $query->whereBetween('wallets.created_at', [$from . ' 00:00:00', $to . ' 23:59:59'])
+                    ->orWhereBetween('wallets.updated_at', [$from . ' 00:00:00', $to . ' 23:59:59']);
             });
         } elseif ($from) {
             $query->where(function ($query) use ($from) {
-                $query->where('wallets.created_at', '>=', $from.' 00:00:00')
-                    ->orWhere('wallets.updated_at', '>=', $from.' 00:00:00');
+                $query->where('wallets.created_at', '>=', $from . ' 00:00:00')
+                    ->orWhere('wallets.updated_at', '>=', $from . ' 00:00:00');
             });
         } elseif ($to) {
             $query->where(function ($query) use ($to) {
-                $query->where('wallets.created_at', '<=', $to.' 23:59:59')
-                    ->orWhere('wallets.updated_at', '<=', $to.' 23:59:59');
+                $query->where('wallets.created_at', '<=', $to . ' 23:59:59')
+                    ->orWhere('wallets.updated_at', '<=', $to . ' 23:59:59');
             });
         }
         if ($status !== null) {
@@ -562,18 +610,18 @@ class BookingController extends Controller
         // Check if any filters are applied
         if ($from && $to) {
             $query->where(function ($query) use ($from, $to) {
-                $query->whereBetween('created_at', [$from.' 00:00:00', $to.' 23:59:59'])
-                    ->orWhereBetween('updated_at', [$from.' 00:00:00', $to.' 23:59:59']);
+                $query->whereBetween('created_at', [$from . ' 00:00:00', $to . ' 23:59:59'])
+                    ->orWhereBetween('updated_at', [$from . ' 00:00:00', $to . ' 23:59:59']);
             });
         } elseif ($from) {
             $query->where(function ($query) use ($from) {
-                $query->where('created_at', '>=', $from.' 00:00:00')
-                    ->orWhere('updated_at', '>=', $from.' 00:00:00');
+                $query->where('created_at', '>=', $from . ' 00:00:00')
+                    ->orWhere('updated_at', '>=', $from . ' 00:00:00');
             });
         } elseif ($to) {
             $query->where(function ($query) use ($to) {
-                $query->where('created_at', '<=', $to.' 23:59:59')
-                    ->orWhere('updated_at', '<=', $to.' 23:59:59');
+                $query->where('created_at', '<=', $to . ' 23:59:59')
+                    ->orWhere('updated_at', '<=', $to . ' 23:59:59');
             });
         }
 
@@ -672,11 +720,11 @@ class BookingController extends Controller
         $statusCounts['trash'] = $query->count();
         // Apply date range filter
         if ($from && $to) {
-            $query->whereBetween('created_at', [$from.' 00:00:00', $to.' 23:59:59']);
+            $query->whereBetween('created_at', [$from . ' 00:00:00', $to . ' 23:59:59']);
         } elseif ($from) {
-            $query->where('created_at', '>=', $from.' 00:00:00');
+            $query->where('created_at', '>=', $from . ' 00:00:00');
         } elseif ($to) {
-            $query->where('created_at', '<=', $to.' 23:59:59');
+            $query->where('created_at', '<=', $to . ' 23:59:59');
         }
 
         // Apply other filters
@@ -754,7 +802,7 @@ class BookingController extends Controller
     {
         abort_if(Gate::denies('booking_delete'), Response::HTTP_FORBIDDEN, '403 Forbidden');
         $ids = $request->input('ids');
-        if (! empty($ids)) {
+        if (!empty($ids)) {
             try {
 
                 Booking::whereIn('id', $ids)->delete();
@@ -772,7 +820,7 @@ class BookingController extends Controller
     {
         $ids = $request->input('ids');
 
-        if (! empty($ids)) {
+        if (!empty($ids)) {
             try {
 
                 Booking::onlyTrashed()->whereIn('id', $ids)->forceDelete();
