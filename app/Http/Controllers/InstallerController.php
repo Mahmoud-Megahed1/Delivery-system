@@ -63,7 +63,7 @@ class InstallerController extends Controller
         $purchaseCode = $validatedData['purchase_code'];
         $websiteUrl = rtrim(parse_url(url()->current(), PHP_URL_SCHEME).'://'.parse_url(url()->current(), PHP_URL_HOST), '/');
 
-        $apiUrl = 'https://purchase-validation.unibooker.app/PurchaseValidation/purchase_validation_rideon.php';
+        $apiUrl = 'https://purchase-validation.unibooker.app/PurchaseValidation/purchase_validation_unibooker.php';
 
         $response = Http::post($apiUrl, [
             'purchase_code' => $purchaseCode,
@@ -108,7 +108,7 @@ class InstallerController extends Controller
 
             $key = base64_encode(random_bytes(32));
 
-            $output = 'APP_NAME=RideOn'.time()."\n".
+            $output = 'APP_NAME=Piadgo'.time()."\n".
                 "APP_ENV=live\n".
                 'APP_KEY=base64:'.$key."\n".
                 "APP_DEBUG=false\n".
@@ -172,7 +172,7 @@ class InstallerController extends Controller
     {
         try {
             Artisan::call('db:wipe', ['--force' => true]);
-            $sql_path = base_path('installer/rideon.sql');
+            $sql_path = base_path('installer/Piadgo.sql');
             DB::unprepared(file_get_contents($sql_path));
 
             return redirect()->route('installer.admin');
