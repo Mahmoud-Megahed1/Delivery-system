@@ -1,26 +1,28 @@
 $(document).ready(function () {
-    $('#payoutDriver').select2({
-        minimumInputLength: 3,
-        ajax: {
-            url: payoutVendorSearchUrl, // Defined globally below
-            dataType: 'json',
-            delay: 250,
-            processResults: function (data) {
-                return {
-                    results: $.map(data, function (drivers) {
-                        return {
-                            id: drivers.id,
-                            text: drivers.name,
-                        };
-                    })
-                };
-            },
-            cache: true,
-            error: function (jqXHR, textStatus, errorThrown) {
-                console.error("Error while fetching vendor data:", textStatus, errorThrown);
+    if ($('#payoutDriver').length > 0 && typeof payoutVendorSearchUrl !== 'undefined') {
+        $('#payoutDriver').select2({
+            minimumInputLength: 3,
+            ajax: {
+                url: payoutVendorSearchUrl, // Defined globally on payout pages
+                dataType: 'json',
+                delay: 250,
+                processResults: function (data) {
+                    return {
+                        results: $.map(data, function (drivers) {
+                            return {
+                                id: drivers.id,
+                                text: drivers.name,
+                            };
+                        })
+                    };
+                },
+                cache: true,
+                error: function (jqXHR, textStatus, errorThrown) {
+                    console.error("Error while fetching vendor data:", textStatus, errorThrown);
+                }
             }
-        }
-    });
+        });
+    }
 
     // Preload if vendor is set
     var vendorId = $('#payoutDriver').data('vendor-id');
@@ -45,28 +47,30 @@ $(document).ready(function () {
     });
 
     // Submit form with file + notes
-    $('#payoutForm').on("submit", function (e) {
-        e.preventDefault();
-        const payoutId = $('#modalPayoutId').val();
-        const formData = new FormData(this);
+    if ($('#payoutForm').length > 0 && typeof payoutUpdateStatus !== 'undefined') {
+        $('#payoutForm').on("submit", function (e) {
+            e.preventDefault();
+            const payoutId = $('#modalPayoutId').val();
+            const formData = new FormData(this);
 
-        $.ajax({
-            url: payoutUpdateStatus.replace(':payoutId', payoutId),
-            type: 'POST',
-            data: formData,
-            contentType: false,
-            processData: false,
-            success: function (response) {
-                $('#payoutModal').modal('hide');
-                Swal.fire("Success", "Payout released successfully!", "success").then(() => {
-                    window.location.reload();
-                });
-            },
-            error: function (response) {
-                Swal.fire("Error", "Something went wrong.", "error");
-            }
+            $.ajax({
+                url: payoutUpdateStatus.replace(':payoutId', payoutId),
+                type: 'POST',
+                data: formData,
+                contentType: false,
+                processData: false,
+                success: function (response) {
+                    $('#payoutModal').modal('hide');
+                    Swal.fire("Success", "Payout released successfully!", "success").then(() => {
+                        window.location.reload();
+                    });
+                },
+                error: function (response) {
+                    Swal.fire("Error", "Something went wrong.", "error");
+                }
+            });
         });
-    });
+    }
 
     $('#resetBtn').click(function () {
         const form = $('#filterForm')[0];
