@@ -65,7 +65,7 @@ class InstallerController extends Controller
 
         $apiUrl = 'https://purchase-validation.unibooker.app/PurchaseValidation/purchase_validation_unibooker.php';
 
-        $response = Http::post($apiUrl, [
+        $response = Http::withHeaders([])->post($apiUrl, [
             'purchase_code' => $purchaseCode,
             'website_url' => $websiteUrl,
         ]);

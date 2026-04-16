@@ -38,7 +38,7 @@
                                     @foreach($translations as $key => $translation) 
                                     <tr>
                                         <td width="30%">
-                                        <label style='font-size:12px' for="{{ $key }}">{{ strtoupper(str_replace("_"," ",$key)); }}</label></td>  <td>
+                                        <label style='font-size:12px' for="{{ $key }}">{{ strtoupper(str_replace("_"," ",$key)) }}</label></td>  <td>
                                         <input type="text" style="width:100%" id="{{ $key }}" name="translations[{{ $key }}]" value="{{ $translation }}">
                                         </td> <tr>
                                     @endforeach
